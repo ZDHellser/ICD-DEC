@@ -32,7 +32,7 @@ ACTOR ICD_InfantryRifle : BaseWeapon
 			RIFL A 0 // Reload Check
 			TNT1 A 0 A_PlaySound("weapons/infantryrifle/fire")
 			TNT1 A 0 A_GunFlash
-			RIFL A 5 A_FireBullets(0,0,2,12,"ICD_BulletPuff")
+			RIFL A 5 A_FireBullets(0,0,2,12,"ICD_PUFF")
 			RIFL A 0 // Smoke
 			RIFL A 0 // Rifle Casing
 			RIFL B 3

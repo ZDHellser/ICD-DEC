@@ -63,6 +63,7 @@ ACTOR ICD_ThrownGrenade
 	BounceType Doom
 	BounceFactor 0.6
 	var int user_grenadetic;
+	var int user_grenadeaoe;
 	States
 	{
 		Spawn:
@@ -109,46 +110,21 @@ ACTOR ICD_ThrownGrenade
 		Death:
 			HGN1 A 1 A_ChangeFlag("SOLID", 0)
 			TNT1 A 0 A_SetUserVar("user_grenadetic",user_grenadetic+1)
-			TNT1 A 0 A_JumpIf(user_grenadetic>75,"True.Death")
+			TNT1 A 0 A_JumpIf(user_grenadetic>75,"Explode.Death")
 			Loop
-		True.Death:
+		Explode.Death:
 			TNT1 A 0 A_ChangeFlag(NOGRAVITY, 1)
 			TNT1 A 0 A_Stop
 			TNT1 A 0 A_SpawnItemEx("ICD_GrenadeThrownExplosion")
 			TNT1 A 0 A_Explode(150)
 			TNT1 A 0 A_PlaySound("weapons/boom")
+		Grenade.Frag:
+			TNT1 A 0 A_SetUserVar("user_grenadeaoe",user_grenadeaoe+1)
+			TNT1 A 0 A_JumpIf(user_grenadeaoe>16,"True.Death")
+			TNT1 A 0 A_SpawnProjectile("ICD_Fragment", 8, 0, random(-10,10), CMF_AIMDIRECTION | CMF_TRACKOWNER, random(-5,-35))
 			TNT1 A 0 A_SetAngle(angle+22)
-			TNT1 A 0 A_CustomMissile("ICD_Fragment", 8, 0, random(-10,10), CMF_AIMDIRECTION | CMF_TRACKOWNER, random(5,35))
-			TNT1 A 0 A_SetAngle(angle+22)
-			TNT1 A 0 A_CustomMissile("ICD_Fragment", 8, 0, random(-10,10), CMF_AIMDIRECTION | CMF_TRACKOWNER, random(5,35))
-			TNT1 A 0 A_SetAngle(angle+22)
-			TNT1 A 0 A_CustomMissile("ICD_Fragment", 8, 0, random(-10,10), CMF_AIMDIRECTION | CMF_TRACKOWNER, random(5,35))
-			TNT1 A 0 A_SetAngle(angle+22)
-			TNT1 A 0 A_CustomMissile("ICD_Fragment", 8, 0, random(-10,10), CMF_AIMDIRECTION | CMF_TRACKOWNER, random(5,35))
-			TNT1 A 0 A_SetAngle(angle+22)
-			TNT1 A 0 A_CustomMissile("ICD_Fragment", 8, 0, random(-10,10), CMF_AIMDIRECTION | CMF_TRACKOWNER, random(5,35))
-			TNT1 A 0 A_SetAngle(angle+22)
-			TNT1 A 0 A_CustomMissile("ICD_Fragment", 8, 0, random(-10,10), CMF_AIMDIRECTION | CMF_TRACKOWNER, random(5,35))
-			TNT1 A 0 A_SetAngle(angle+22)
-			TNT1 A 0 A_CustomMissile("ICD_Fragment", 8, 0, random(-10,10), CMF_AIMDIRECTION | CMF_TRACKOWNER, random(5,35))
-			TNT1 A 0 A_SetAngle(angle+22)
-			TNT1 A 0 A_CustomMissile("ICD_Fragment", 8, 0, random(-10,10), CMF_AIMDIRECTION | CMF_TRACKOWNER, random(5,35))
-			TNT1 A 0 A_SetAngle(angle+22)
-			TNT1 A 0 A_CustomMissile("ICD_Fragment", 8, 0, random(-10,10), CMF_AIMDIRECTION | CMF_TRACKOWNER, random(5,35))
-			TNT1 A 0 A_SetAngle(angle+22)
-			TNT1 A 0 A_CustomMissile("ICD_Fragment", 8, 0, random(-10,10), CMF_AIMDIRECTION | CMF_TRACKOWNER, random(5,35))
-			TNT1 A 0 A_SetAngle(angle+22)
-			TNT1 A 0 A_CustomMissile("ICD_Fragment", 8, 0, random(-10,10), CMF_AIMDIRECTION | CMF_TRACKOWNER, random(5,35))
-			TNT1 A 0 A_SetAngle(angle+22)
-			TNT1 A 0 A_CustomMissile("ICD_Fragment", 8, 0, random(-10,10), CMF_AIMDIRECTION | CMF_TRACKOWNER, random(5,35))
-			TNT1 A 0 A_SetAngle(angle+22)
-			TNT1 A 0 A_CustomMissile("ICD_Fragment", 8, 0, random(-10,10), CMF_AIMDIRECTION | CMF_TRACKOWNER, random(5,35))
-			TNT1 A 0 A_SetAngle(angle+22)
-			TNT1 A 0 A_CustomMissile("ICD_Fragment", 8, 0, random(-10,10), CMF_AIMDIRECTION | CMF_TRACKOWNER, random(5,35))
-			TNT1 A 0 A_SetAngle(angle+22)
-			TNT1 A 0 A_CustomMissile("ICD_Fragment", 8, 0, random(-10,10), CMF_AIMDIRECTION | CMF_TRACKOWNER, random(5,35))
-			TNT1 A 0 A_SetAngle(angle+22)
-			TNT1 A 0 A_CustomMissile("ICD_Fragment", 8, 0, random(-10,10), CMF_AIMDIRECTION | CMF_TRACKOWNER, random(5,35))
+			Loop
+		True.Death:
 			TNT1 A 6
 			TNT1 A 0 A_SpawnItemEx("ICD_Explosion_Smoke")
 			Stop
