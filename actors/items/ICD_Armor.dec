@@ -4,7 +4,7 @@ ACTOR ICD_GearArmor : BasicArmorPickup replaces BlueArmor
 	Radius 20
 	Height 16
 	Inventory.PickupMessage "$GotGear"
-	Inventory.PickupSound "items/gearpickup"
+	Inventory.PickupSound "icd/item4"
 	Inventory.Icon "ARM1A0"
 	Armor.SavePercent 85
 	Armor.SaveAmount 100

@@ -1,7 +1,7 @@
 ACTOR ICD_RifleAmmo : Ammo replaces Cell
 {
 	Inventory.PickupMessage "$GotCell"
-	Inventory.PickupSound "weapons/assaultrifle/clipin"
+	Inventory.PickupSound "icd/m4in"
 	Inventory.Amount 20
 	Inventory.MaxAmount 135
 	Ammo.BackpackAmount 45

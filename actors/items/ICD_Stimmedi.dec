@@ -56,7 +56,7 @@ ACTOR ICD_Stimpack : Health replaces Stimpack
 {
 	Game Doom
 	Inventory.Amount 10
-	Inventory.PickupSound "items/stimpackmedikitpickup"
+	Inventory.PickupSound "icd/health"
 	Inventory.PickupMessage "$GotStim"
 	Inventory.PickupFlash "ICD_GS_EmptyStimPack"
 	Scale 0.9
@@ -72,7 +72,7 @@ ACTOR ICD_Medikit : Health replaces Medikit
 {
 	Game Doom
 	Inventory.Amount 25
-	Inventory.PickupSound "items/stimpackmedikitpickup"
+	Inventory.PickupSound "icd/health"
 	Inventory.PickupFlash "ICD_GS_EmptyHealthkit"
 	Inventory.PickupMessage "$GotMedi" // "Picked up a medikit."
 	Health.LowMessage 25, "$ICDGOTMEDINEED" // "Picked up a medikit that you REALLY need!"
@@ -95,7 +95,7 @@ ACTOR ICD_SoulMedikit1 : Health replaces Soulsphere
 	Inventory.MaxAmount 150
 	Inventory.PickupFlash "ICD_SoulMedikit2"
 	Inventory.PickupMessage "$GotSoul"
-	Inventory.PickupSound "items/stimpackmedikitpickup"
+	Inventory.PickupSound "icd/health"
 	scale 0.9
 	States
 	{
@@ -112,7 +112,7 @@ ACTOR ICD_SoulMedikit2 : Health
 	Inventory.MaxAmount 150
 	Inventory.PickupFlash "ICD_SoulMedikit3"
 	Inventory.PickupMessage "$GotSoul2"
-	Inventory.PickupSound "items/stimpackmedikitpickup"
+	Inventory.PickupSound "icd/health"
 	scale 0.9
 	States
 	{
@@ -130,7 +130,7 @@ ACTOR ICD_SoulMedikit3 : Health
 	Inventory.MaxAmount 150
 	Inventory.PickupFlash "ICD_SoulMedikit4"
 	Inventory.PickupMessage "$GotSoul2"
-	Inventory.PickupSound "items/stimpackmedikitpickup"
+	Inventory.PickupSound "icd/health"
 	scale 0.9
 	States
 	{
@@ -148,7 +148,7 @@ ACTOR ICD_SoulMedikit4 : Health
 	Inventory.MaxAmount 150
 	Inventory.PickupFlash "ICD_SoulMedikit5"
 	Inventory.PickupMessage "$GotSoul2"
-	Inventory.PickupSound "items/stimpackmedikitpickup"
+	Inventory.PickupSound "icd/health"
 	scale 0.9
 	States
 	{
@@ -166,7 +166,7 @@ ACTOR ICD_SoulMedikit5 : Health
 	Inventory.MaxAmount 150
 	Inventory.PickupFlash "ICD_SoulEmptyMedikit"
 	Inventory.PickupMessage "$GotSoul2"
-	Inventory.PickupSound "items/stimpackmedikitpickup"
+	Inventory.PickupSound "icd/health"
 	scale 0.9
 	States
 	{

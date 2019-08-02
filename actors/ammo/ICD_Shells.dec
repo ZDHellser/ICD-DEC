@@ -1,7 +1,7 @@
 ACTOR ICD_Shells : Ammo replaces Shell
 {
 	Inventory.PickupMessage "$GotShells"
-	Inventory.PickupSound "weapons/doublebarrel/load"
+	Inventory.PickupSound "icd/dbload"
 	Inventory.Amount 4
 	Inventory.MaxAmount 36
 	Ammo.BackpackAmount 4
@@ -20,7 +20,7 @@ ACTOR ICD_Shells : Ammo replaces Shell
 ACTOR ICD_Shells2 : ICD_Shells
 {
 	Inventory.PickupMessage "$GotShells"
-	Inventory.PickupSound "weapons/doublebarrel/load"
+	Inventory.PickupSound "icd/dbload"
 	Inventory.Amount 4
 	Radius 20
 	Height 16

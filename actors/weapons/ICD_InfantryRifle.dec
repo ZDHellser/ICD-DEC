@@ -6,7 +6,7 @@ ACTOR ICD_InfantryRifle : BaseWeapon
 	Weapon.AmmoType "ICD_InfantryRifleMagazine"
 	Weapon.AmmoType2 "ICD_RifleAmmo"
 	Inventory.PickupMessage "$GotRifle"
-	Weapon.UpSound "weapons/generic/weaponup"
+	Weapon.UpSound "icd/weapu?"
 	Tag "Infantry Rifle"
 	Obituary "%o was sniped by %k."
 	HitObituary "%o was shanked by %k."
@@ -30,7 +30,7 @@ ACTOR ICD_InfantryRifle : BaseWeapon
 			Goto Ready
 			TNT1 A 0 A_AlertMonsters
 			RIFL A 0 // Reload Check
-			TNT1 A 0 A_PlaySound("weapons/infantryrifle/fire")
+			TNT1 A 0 A_PlaySound("icd/m211")
 			TNT1 A 0 A_GunFlash
 			RIFL A 5 A_FireBullets(0,0,2,12,"ICD_PUFF")
 			RIFL A 0 // Smoke
@@ -42,7 +42,7 @@ ACTOR ICD_InfantryRifle : BaseWeapon
 			Goto Ready
 		AltFire:
 			BAYG A 2 A_Saw(NULL, NULL, 5, "ICD_BayonetNull", 0, 62)
-			TNT1 A 0 A_PlaySound("weapons/generic/swing",5)
+			TNT1 A 0 A_PlaySound("icd/thrust?",5)
 			BAYG B 3 A_Saw(NULL, NULL, 7, "ICD_BayonetNull", 0, 78)
 			BAYG C 5 A_Saw(NULL, NULL, 5, "ICD_BayonetSpark", 0, 96)
 			BAYG B random(3,6)
@@ -53,13 +53,13 @@ ACTOR ICD_InfantryRifle : BaseWeapon
 			TNT1 A 0 A_JumpIfInventory("ICD_InfantryRifleMagazine",20,"Ready")
 			TNT1 A 0 A_JumpIfInventory("ICD_RifleAmmo", 1, 1)
 		Goto Ready
-			RIFL B 3 A_PlaySound("weapons/generic/emptyclick2")
+			RIFL B 3 A_PlaySound("icd/click2")
 			RIFL A 2
 			RIFL C 4
 			RIFR A 5
 			RIFR B 5
 			RIFR C 5
-			RIFR D 4 A_PlaySound("weapons/infantryrifle/reload")
+			RIFR D 4 A_PlaySound("icd/snrel")
 		Reload.InfoPhase:
 			TNT1 A 0 A_TakeInventory("ICD_RifleAmmo",1)
 			TNT1 A 0 A_GiveInventory("ICD_InfantryRifleMagazine",1)
@@ -69,7 +69,7 @@ ACTOR ICD_InfantryRifle : BaseWeapon
 			RIFR A 40
 			RIFR F 4
 			RIFR A 5
-			RIFL C 10 A_PlaySound("weapons/infantryrifle/bolt")
+			RIFL C 10 A_PlaySound("icd/bolt2")
 			Goto Ready
 		Reload.Restart:
 			TNT1 A 0
@@ -99,12 +99,12 @@ ACTOR ICD_BayonetSpark : BulletPuff
 		Crash:
 		Spawn:
 			TNT1 A 0
-			TNT1 A 0 A_PlaySound("weapons/generic/smack")
+			TNT1 A 0 A_PlaySound("icd/smack")
 			TNT1 A 0 A_SpawnItem("ICD_SPARKS")
 			SMKE BCDEFGH 2
 			stop
 		XDeath:
-			TNT1 A 0 A_PlaySound("weapons/knife/knifegore")
+			TNT1 A 0 A_PlaySound("icd/knf4")
 			stop
 	}
 }
@@ -129,7 +129,7 @@ ACTOR ICD_BayonetNull : BulletPuff
 			TNT1 A 0
 			stop
 		XDeath:
-			TNT1 A 0 A_PlaySound("weapons/knife/knifegore")
+			TNT1 A 0 A_PlaySound("icd/knf4")
 			stop
 	}
 }

@@ -7,7 +7,7 @@ ACTOR ICD_Remington : BaseWeapon
 	Weapon.AmmoType2 "ICD_Shells"
 	Inventory.PickupMessage "$GotRemington"
 	Tag "$TAG_Remington"
-	Weapon.UpSound "weapons/generic/weaponup"
+	Weapon.UpSound "icd/weapu?"
 	+WEAPON.AMMO_OPTIONAL
 	+WEAPON.NOALERT
 	Tag "Remington Shotgun"
@@ -30,7 +30,7 @@ ACTOR ICD_Remington : BaseWeapon
 			Goto Ready
 			TNT1 A 0 A_AlertMonsters
 			TNT1 A 0 A_Gunflash
-			TNT1 A 0 A_PlaySound("weapons/remington/fire", CHAN_WEAPON)
+			TNT1 A 0 A_PlaySound("icd/shotg1", CHAN_WEAPON)
 			SHTG A 1 A_FireBullets(5,4,9,5,"ICD_SPUFF")
 			TNT1 AAAAA 0 A_FireCustomMissile("ICD_Gun3_Sparks", frandom(-5,5),0,5,0,0,frandom(-5,5))
 			TNT1 AAAA 0 A_FireCustomMissile("ICD_SHOTGUN_SMOKE", frandom(-9,9),0,5,0,0,frandom(-5,5))
@@ -40,7 +40,7 @@ ACTOR ICD_Remington : BaseWeapon
 			SHTG B 2
 			SHTG C 2
 			SHTG Q 4
-			SHTG R 2 A_PlaySound("weapons/remington/cock", 6)
+			SHTG R 2 A_PlaySound("icd/srack", 6)
 			SHTG R 2 A_FireCustomMissile("ICD_ShotgunShellSpawner1", 0, 0, 5, -4)
 			SHTG Q 4
 			SHTG C 3
@@ -53,7 +53,7 @@ ACTOR ICD_Remington : BaseWeapon
 			TNT1 A 0 A_JumpIfInventory("ICD_RemingtonMagazine",8,"Ready")
 			TNT1 A 0 A_JumpIfInventory("ICD_Shells", 1, 1)
 			Goto Ready
-			TNT1 A 0 A_PlaySound("weapons/generic/emptyclick2")
+			TNT1 A 0 A_PlaySound("icd/click2")
 			SHTG A 1
 			SHTG E 2
 			SHTG A 2
@@ -66,7 +66,7 @@ ACTOR ICD_Remington : BaseWeapon
 			SHTG M 3
 			SHTG K 3
 			SHTG L 3
-			TNT1 A 0 A_PlaySound("weapons/doublebarrel/load", 6)
+			TNT1 A 0 A_PlaySound("icd/dbload", 6)
 			TNT1 A 0 A_TakeInventory("ICD_Shells",1,TIF_NOTAKEINFINITE)
 			TNT1 A 0 A_GiveInventory("ICD_RemingtonMagazine",1)
 			SHTG N 3 A_WeaponReady(WRF_NOBOB)
@@ -80,7 +80,7 @@ ACTOR ICD_Remington : BaseWeapon
 			SHTG G 3
 			SHTG A 3
 			SHTG B 2
-			SHTG C 3 A_PlaySound("weapons/remington/cock", 6)
+			SHTG C 3 A_PlaySound("icd/srack", 6)
 			SHTG D 3
 			SHTG C 4
 			SHTG B 2

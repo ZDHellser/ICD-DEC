@@ -37,11 +37,11 @@ ACTOR ICD_ZombieMan replaces Zombieman
 		POSS F 2 Bright
 		POSS E 5 A_Jump(253,"See")
 	Missile.Reload:
-		POSS E 9 A_PlaySound("weapons/generic/emptyclick2")
-		POSS E 4 A_PlaySound("weapons/1911/clipout")
+		POSS E 9 A_PlaySound("icd/click2")
+		POSS E 4 A_PlaySound("icd/pout")
 		POSS E 12	// UZI_CLIP_DROP1
-		POSS E 12 A_PlaySound("weapons/1911/clipin")
-		POSS E 6 A_PlaySound("weapons/uzi/suzi2")
+		POSS E 12 A_PlaySound("icd/pin")
+		POSS E 6 A_PlaySound("icd/suzi2")
 		Goto See
 	Pain:
 		POSS G 3

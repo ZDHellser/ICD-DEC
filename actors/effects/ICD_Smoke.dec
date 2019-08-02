@@ -71,7 +71,7 @@ ACTOR ICD_PUFF : BulletPuff
 	{
 		Spawn:
 			TNT1 A 0
-			TNT1 A 0 A_PlaySound("world/effect/bullimpact", 6)
+			TNT1 A 0 A_PlaySound("icd/impc1", 6)
 			PUFF A 2 BRIGHT Light("ICD_Sparks")
 			PUFF B 2 BRIGHT
 			TNT1 AAAA 0 A_SpawnItemEx("ICD_BulletPuffSpark", 0,0,0,random(-5,5),random(-5,5),random(-5,5),0,SXF_NOCHECKPOSITION)
@@ -95,7 +95,7 @@ ACTOR ICD_SPUFF : BulletPuff
 	{
 		Spawn:
 			TNT1 A 0
-			TNT1 A 0 A_PlaySound("world/effect/bullimpact", 6)
+			TNT1 A 0 A_PlaySound("icd/impc1", 6)
 			TNT1 AAAA 0 A_SpawnItemEx("ICD_BLACK_SPARKS", 0,0,0,random(-5,5),random(-5,5),random(-5,5),0,SXF_NOCHECKPOSITION,75)
 			SMKE ABCDEFGH 2
 			Stop
@@ -198,7 +198,7 @@ ACTOR ICD_FLARE_SMOKE : ICD_GunSmokeBase
 		Spawn:
 			RLSR C 6 BRIGHT
 			TNT1 A 0 A_Jump(175, "SpawnJump")
-			TNT1 A 0 A_PlaySound("weapons/flare/flaresoftignite")
+			TNT1 A 0 A_PlaySound("icd/flare2")
 			TNT1 A 0 A_JumpIf(waterlevel==3,"Bubbles")
 			TNT1 A 0 A_SpawnItemEx("ICD_Flare_Sparks_Red",0,0,0,frandom(-2,2), frandom(-2,2), frandom(2,3),0,SXF_NOCHECKPOSITION)
 			TNT1 A 0 A_SpawnItemEx("ICD_Flare_Sparks_Yellow",0,0,0,frandom(-2,2), frandom(-2,2), frandom(2,3),0,SXF_NOCHECKPOSITION)

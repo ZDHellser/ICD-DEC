@@ -208,7 +208,7 @@ ACTOR ICD_Dying_Skewered_Bloke replaces LiveStick
 		Spawn:
 			POL6 A 6
 			TNT1 A 0 A_Jump(153,2)
-			POL6 A 100 A_PlaySound("world/ambient/killme")
+			POL6 A 100 A_PlaySound("icd/killme?")
 			POL6 B 10
 			Loop
 		Death:
@@ -235,7 +235,7 @@ ACTOR ICD_Skull_On_A_Stick replaces HeadOnAStick
 			POL4 A -1
 			Stop
 		Death:
-			TNT1 A 0 A_PlaySound("world/ambient/squish")
+			TNT1 A 0 A_PlaySound("icd/squish")
 			TNT1 A 0 A_NoBlocking
 			TNT1 A 0 A_SpawnItemEx("ICD_GoreStick3",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 			POB1 A -1
@@ -257,7 +257,7 @@ ACTOR ICD_Heads_On_A_Stick replaces HeadsOnAStick
 			POL2 A -1
 			Stop
 		Death:
-			POL2 C 4 A_PlaySound("world/ambient/skulls")
+			POL2 C 4 A_PlaySound("icd/skulls")
 			POL2 D 4 A_NoBlocking
 			TNT1 A 0 A_SpawnItem("ICD_GoreStick4")
 			POL2 E 4
@@ -305,7 +305,7 @@ ACTOR ICD_Twitching_Bloke_I replaces BloodyTwitch // BLOODY TWITCH.TV!
 	{
 		Spawn:
 			TNT1 A 0 NoDelay A_Jump(77,2)
-			GOR1 A 100 A_PlaySound("world/ambient/killme")
+			GOR1 A 100 A_PlaySound("icd/killme?")
 			GOR1 B 15
 			GOR1 C 8
 			GOR1 B 6

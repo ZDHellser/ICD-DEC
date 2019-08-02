@@ -4,7 +4,7 @@ ACTOR ICD_RemingtonPickup : CustomInventory replaces Shotgun
 	Height 16
 	Scale 0.85
 	Inventory.PickupMessage "$GotShotgun"
-	Inventory.PickupSound "weapons/remington/cock"
+	Inventory.PickupSound "icd/srack"
 	States
 	{
 		Spawn:
@@ -28,7 +28,7 @@ ACTOR ICD_SawedOffPickup : CustomInventory
 	Height 16
 	Scale 0.85
 	Inventory.PickupMessage "$GotSawedOff"
-	Inventory.PickupSound "weapons/sawedoff/cock"
+	Inventory.PickupSound "icd/sawed2"
 	States
 	{
 		Spawn:
@@ -53,7 +53,7 @@ ACTOR ICD_UziPickup : CustomInventory replaces Chaingun
 	Height 16
 	Scale 0.56
 	Inventory.PickupMessage "$GotChainGun"
-	Inventory.PickupSound "weapons/uzi/uzi3"
+	Inventory.PickupSound "icd/uzi3"
 	States
 	{
 		Spawn:
@@ -72,7 +72,7 @@ ACTOR ICD_MinigunPickup : CustomInventory replaces RocketLauncher
 	Height 16
 	Scale 0.66
 	Inventory.PickupMessage "$GotRocketLauncher"
-	Inventory.PickupSound "weapons/assaultrifle/clipdrop"
+	Inventory.PickupSound "icd/m4out"
 	States
 	{
 		Spawn:
@@ -91,7 +91,7 @@ Actor ICD_RevolverPickup : CustomInventory
 	Height 16
 	Scale 0.65
 	Inventory.PickupMessage "$GotMagnum"
-	Inventory.PickupSound "weapons/revolver/min"
+	Inventory.PickupSound "icd/min"
 	States
 	{
 		Spawn:
@@ -110,7 +110,7 @@ ACTOR ICD_DualiesPickup : CustomInventory replaces GreenArmor
 	Height 16
 	Scale 0.8
 	Inventory.PickupMessage "$GotArmour"
-	Inventory.PickupSound "weapons/1911/slide"
+	Inventory.PickupSound "icd/pslide"
 	States
 	{
 		Spawn:

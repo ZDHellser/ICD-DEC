@@ -54,17 +54,17 @@ ACTOR ICD_DoomPlayer : PlayerPawn replaces DoomPlayer
 			Goto Missile
 		Pain:
 			PLAY G 4
-			PLAY G 4 A_PlaySound("player/pain/breath", CHAN_VOICE)
+			PLAY G 4 A_PlaySound("icd/breth?", CHAN_VOICE)
 			Goto Spawn
 		Pain.Smoke:
 			PLAY G 3
-			PLAY G 4 A_PlaySound("player/pain/smoke", CHAN_VOICE)
+			PLAY G 4 A_PlaySound("icd/cough?", CHAN_VOICE)
 			Goto Spawn
 		Pain.Drowning:
-			PLAY G 4 A_PlaySound("player/pain/gargle", CHAN_ITEM|CHAN_UI)
+			PLAY G 4 A_PlaySound("icd/gurgl?", CHAN_ITEM|CHAN_UI)
 			Goto Spawn
 		Death.Drowning:
-			PLAY G 4 A_PlaySound("player/death/drowned", CHAN_ITEM|CHAN_UI)
+			PLAY G 4 A_PlaySound("icd/drwn", CHAN_ITEM|CHAN_UI)
 			PLAY G 4
 			PLAY H 8
 			PLAY I 8

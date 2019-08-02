@@ -4,7 +4,7 @@ ACTOR ICD_BoxOfGrenades : CustomInventory replaces RocketBox
 	Height 16
 	Scale 0.75
 	Inventory.PickupMessage "$GotBFG"
-	Inventory.PickupSound "weapons/generic/weaponup"
+	Inventory.PickupSound "icd/weapu?"
 	Inventory.PickupFlash "ICD_EmptyBoxOfGrenades"
 	States
 	{
@@ -25,8 +25,8 @@ ACTOR ICD_EmptyBoxOfGrenades
 	{
 		Spawn:
 			TNT1 A 0
-			BFUG B 2 A_PlaySound("weapons/generic/click", CHAN_VOICE)
-			BFUG B 2 A_PlaySound("weapons/doublebarrel/load", CHAN_BODY)
+			BFUG B 2 A_PlaySound("icd/click", CHAN_VOICE)
+			BFUG B 2 A_PlaySound("icd/dbload", CHAN_BODY)
 			BFUG B 200
 			BFUG BBBBBBBBBBBBBBB 10 A_FadeOut
 			Wait

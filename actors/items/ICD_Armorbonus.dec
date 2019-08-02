@@ -24,7 +24,7 @@ ACTOR ICD_ArmorBonus : BasicArmorBonus replaces ArmorBonus
 	Height 16
 	Inventory.PickupMessage "$GOTArmourHelmet" // "Picked up an armor bonus."
 	Inventory.PickupFlash "ICD_ArmorBonusFlash"
-	Inventory.PickupSound "items/armorbonuspickup"
+	Inventory.PickupSound "icd/armor"
 	Inventory.Icon "ARM1A0"
 	Armor.SavePercent 85
 	Armor.SaveAmount 2

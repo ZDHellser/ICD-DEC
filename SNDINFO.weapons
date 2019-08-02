@@ -1,140 +1,135 @@
 // Weapon Sounds
-weapons/generic/holsterup					DSHOLSTR
+icd/holstr									DSHOLSTR
 
-$random weapons/generic/weaponup { weapons/generic/weaponup1 weapons/generic/weaponup2 }
-weapons/generic/weaponup1					DSWEAPUP
-weapons/generic/weaponup2					DSWEAPU2
+$random icd/weapu? { icd/weapup icd/weapu2 }
+icd/weapup									DSWEAPUP
+icd/weapu2									DSWEAPU2
 
 //Knife
-weapons/knife/knifehit						DSKNIFE3
-weapons/knife/upsound						DSKNF2
-weapons/knife/knifeslice					DSKNF1
-weapons/knife/knifeslice2					DSKNF3
-weapons/knife/knifegore						DSKNF4
-weapons/knife/knifeswing					DSKNIFE1
-weapons/knife/knifeswing2					DSKNIFE2
+icd/knife3									DSKNIFE3
+icd/knf2									DSKNF2
+icd/knf1									DSKNF1
+icd/knf3									DSKNF3
+icd/knf4									DSKNF4
+icd/knife1									DSKNIFE1
+icd/knife2									DSKNIFE2
 
-weapons/generic/smack						DSSMACK
-weapons/generic/throw						DSTHROW
-weapons/generic/swing1						DSSWING1
-weapons/generic/swing2						DSSWING2
-weapons/generic/emptyclick2					DSCLICK2
-weapons/generic/click						DSCLICK
+icd/smack									DSSMACK
+icd/throw									DSTHROW
+icd/thrust1									DSSWING1
+icd/thrust2									DSSWING2
+icd/click2									DSCLICK2
+icd/click									DSCLICK
 
-$random weapons/generic/swing { weapons/generic/swing1 weapons/generic/swing2 }
+$random icd/thrust? { icd/thrust1 icd/thrust2 }
 
 //Chainsaw
-weapons/chainsaw/sawidle2					DSSAWIDL
-weapons/chainsaw/sawup2						DSSAWUP
-weapons/chainsaw/sawful2					DSSAWFUL
-weapons/chainsaw/gas						DSSAWGAS
-weapons/chainsaw/hit2						DSSAWHIT
+icd/sawidl2									DSSAWIDL
+icd/sawup2									DSSAWUP
+icd/sawful2									DSSAWFUL
+icd/sawgas									DSSAWGAS
+icd/sawhit2									DSSAWHIT
 
 //Pistols
-weapons/1911/hammer							DSHAMMR
-weapons/1911/fire							DS1911
-weapons/1911/clipout						DSPOUT
-weapons/1911/clipin							DSPIN
-weapons/1911/slide							DSPSLIDE
-weapons/1911/clipdrop						DSCLP1A
+icd/silenc									DSSILENC
+icd/hammr									DSHAMMR
+icd/1911									DS1911
+icd/pout									DSPOUT
+icd/pin										DSPIN
+icd/pslide									DSPSLIDE
+icd/clp1a									DSCLP1A
 
 //Sawed Off
-weapons/sawedoff/fire						DSSAWED1
-weapons/sawedoff/cock						DSSAWED2
+icd/sawed1									DSSAWED1
+icd/sawed2									DSSAWED2
 
 //Double Barrel
-weapons/doublebarrel/fire					DSSHOTG2
-weapons/doublebarrel/load					DSDBLOAD
-weapons/doublebarrel/close					DSDBCLS
-weapons/doublebarrel/open					DSDBOPN
+//These sounds are not defined in ICD
+icd/shotg2									DSSHOTG2
+icd/dbload									DSDBLOAD
+icd/dbcls									DSDBCLS
+icd/dbopn									DSDBOPN
 
 //Remington
-weapons/remington/fire						DSSHOTG1
-weapons/remington/cock						DSSRACK
-weapons/flakremington/fire					DSSHOTG3
-weapons/flakremington/cock					DSFRACK
+icd/shotg1									DSSHOTG1
+icd/srack									DSSRACK
+icd/shotg3									DSSHOTG3
+icd/frack									DSFRACK
 
 //Infantry Rifle
-weapons/infantryrifle/fire					DSM211
-weapons/infantryrifle/reload				DSSNREL
-weapons/infantryrifle/bolt					DSBOLT2
+icd/m211									DSM211
+icd/snrel									DSSNREL
+icd/bolt2									DSBOLT2
 
 //Assault Rifle
-weapons/assaultrifle/fire					DSASSLT
-weapons/assaultrifle/clipdrop				DSM4OUT
-weapons/assaultrifle/clipin					DSUZI2
-weapons/assaultrifle/grenfire				DSGREN
-
-$pitchshiftrange 2
+icd/asslt									DSASSLT
+icd/m4out									DSM4OUT
+icd/m4in									DSUZI2
+icd/gren									DSGREN
 
 //Flare
-weapons/flare/flareignite					DSFLARE2
-weapons/flare/flaresoftignite				DSFLARE2
-weapons/flare/flarerun						DSFLARE1
+icd/flare1									DSFLARE1
+icd/flare2									DSFLARE2
+icd/flare3									DSFLARE2
+
+$volume icd/flare1							0.75
+$volume icd/flare2							0.69
+$rolloff icd/flare2 						64 450
 
 //40mm
-weapons/40mm/fire							DSGREN2
-weapons/40mm/open							DS40OPN
-weapons/40mm/load							DS40LOAD
-weapons/40mm/close							DS40CLS
+icd/gren2									DSGREN2
+icd/40opn									DS40OPN
+icd/40load									DS40LOAD
+icd/40cls									DS40CLS
 
 //Grenade
-weapons/grenade/flare						DSFLARE
-weapons/grenade/hgren1						DSHGREN1
-weapons/grenade/hgren2						DSHGREN2
-weapons/grenade/hgren3						DSHGREN3
-weapons/grenade/noway						DSNOWAY
+icd/flare									DSHOLSTR
+icd/hgren1									DSHGREN1
+icd/hgren2									DSHGREN2
+icd/hgren3									DSHGREN3
+icd/noway									DSNOWAY
 
 //Minigun
-weapons/minigun/mini2						DSMINI2
-weapons/minigun/mini3						DSMINI3
-weapons/minigun/mini4						DSMINI4
-weapons/minigun/mini5						DSMINI5
+icd/mini2									DSMINI2
+icd/mini3									DSMINI3
+icd/mini4									DSMINI4
+icd/mini5									DSMINI5
 
 //Uzi
-weapons/uzi/fire							DSUZI1
-weapons/uzi/uzi2							DSUZI2
-weapons/uzi/uzi3							DSUZI3
-weapons/uzi/suzi2							DSSUZI2
-weapons/uzi/suzi3							DSSUZI3
-weapons/uzi/suzi4							DSSUZI4
+icd/uzi1									DSUZI1
+icd/uzi2									DSUZI2
+icd/uzi3									DSUZI3
+icd/suzi2									DSSUZI2
+icd/suzi3									DSSUZI3
+icd/suzi4									DSSUZI4
 
 //Flak40mm >.>;
-weapons/40mm/bounce							DSGREN4
-weapons/40mm/gren2							DSGREN2
-weapons/40mm/gren3							DSGREN3
-weapons/40mm/open							DS40OPN
-weapons/40mm/load							DS40LOAD
-weapons/40mm/close							DS40CLS
-weapons/40mm/gashiss						DSGAS2
-weapons/40mm/gasbounce						DSGAS3
-weapons/40mm/gasopen						DSGAS1
+icd/gren4									DSGREN4
+icd/gren2									DSGREN2
+icd/gren3									DSGREN3
+icd/gas2									DSGAS2
+icd/gas3									DSGAS3
+icd/gas1									DSGAS1
 
 //Satchel
-weapons/satchel/satch1						DSSATCH1
-weapons/satchel/satch2						DSSATCH2
+icd/satch1									DSSATCH1
+icd/satch2									DSSATCH2
 
 //Beretta
-weapons/beretta/fire						DSBPIST
-weapons/beretta/slide						DSBSLIDE
+icd/bpist									DSBPIST
+icd/bslide									DSBSLIDE
 
 //Revolver
-weapons/revolver/fire						DSMAGNM
-weapons/revolver/mout						DSMOUT
-weapons/revolver/mload						DSMLOAD
-weapons/revolver/min						DSMIN
+icd/magnm									DSMAGNM
+icd/mout									DSMOUT
+icd/mload									DSMLOAD
+icd/min										DSMIN
 
-
-$volume weapons/flare/flaresoftignite		0.5
-$volume weapons/flare/flarerun				0.4
-$rolloff weapons/flare/flaresoftignite 		64 512
-$rolloff weapons/flare/flarerun 			64 512
-
-$random weapons/boom	{ weapons/boom1 weapons/boom2 weapons/boom3 weapons/boom4 }
-weapons/boom1								DSBOOM1
-weapons/boom2								DSBOOM2
-weapons/boom3								DSBOOM3
-weapons/boom4								DSBOOM4
+$random weapons/boom?	{ icd/boom1 icd/boom2 icd/boom3 icd/boom4 }
+icd/boom1								DSBOOM1
+icd/boom2								DSBOOM2
+icd/boom3								DSBOOM3
+icd/boom4								DSBOOM4
 
 $random weapons/shellbounce { weapons/effects/shellbounce1 weapons/effects/shellbounce2 weapons/effects/shellbounce3 }
 weapons/effects/shellbounce1				DSSHELL1

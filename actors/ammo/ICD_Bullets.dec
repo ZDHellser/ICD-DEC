@@ -1,6 +1,6 @@
 ACTOR ICD_Bullets : Ammo replaces Clip
 {
-	Inventory.PickupSound "weapons/1911/clipin"
+	Inventory.PickupSound "icd/pin"
 	Inventory.PickupMessage "$GotClip"
 	Inventory.Amount 12
 	Inventory.MaxAmount 180
@@ -21,7 +21,7 @@ ACTOR ICD_9mmClip : ICD_Bullets
 {
 	Inventory.Amount 30
 	Inventory.PickupMessage "$Got9mmClip"
-	Inventory.PickupSound "weapons/uzi/suzi3"
+	Inventory.PickupSound "icd/suzi3"
 	Scale 0.6
 	States
 	{
@@ -41,7 +41,7 @@ Actor ICD_BoxOfBullets : CustomInventory replaces ClipBox
 	Radius 20
 	Height 16
 	Scale 0.85
-	Inventory.PickupSound "weapons/generic/weaponup"
+	Inventory.PickupSound "icd/weapu?"
 	Inventory.PickupMessage "$GotClipBox"
 	Inventory.PickupFlash "ICD_BoxOfBulletsDrop"
 	States
@@ -57,8 +57,8 @@ Actor ICD_BoxOfBullets : CustomInventory replaces ClipBox
 		Pickup.Infophase:
 			TNT1 A 0 A_GiveInventory("ICD_Bullets", 60)
 			TNT1 A 0 A_GiveInventory("ICD_RifleAmmo", 60)
-			AMME A 2 A_PlaySound("weapons/1911/clipin")
-			AMME A 2 A_PlaySound("weapons/doublebarrel/load")
+			AMME A 2 A_PlaySound("icd/pin")
+			AMME A 2 A_PlaySound("icd/dbload")
 			Stop
 		FailState:
 			TNT1 A 0
