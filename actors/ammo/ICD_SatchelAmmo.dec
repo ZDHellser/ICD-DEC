@@ -1,7 +1,7 @@
 ACTOR ICD_SatchelAmmo : Ammo
 {
 	Inventory.PickupMessage "$GotSatchel"
-	Inventory.PickupSound "weapons/generic/weaponup1"
+	Inventory.PickupSound "icd/weapup11"
 	Inventory.MaxAmount 5
 }
 
@@ -11,7 +11,7 @@ Actor ICD_SatchelPickup : CustomInventory replaces RocketAmmo
 	Height 16
 	Scale 0.8
 	Inventory.PickupMessage "$GotSatchel"
-	Inventory.PickupSound "weapons/generic/weaponup1"
+	Inventory.PickupSound "icd/weapup11"
 	States
 	{
 		Spawn:

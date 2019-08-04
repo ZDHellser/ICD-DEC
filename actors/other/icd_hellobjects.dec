@@ -103,7 +103,15 @@ ACTOR ICD_WoodenRedTorch : ICD_LittleTorchBase replaces ShortRedTorch
 	}
 }
 
-
+ACTOR ICD_Candelabra : ICD_BigTorchBase replaces Candelabra
+{
+	States
+	{
+		Spawn:
+			CBRA ABC 8 Bright Light("ICD_Candelabra")
+			loop
+	}
+}
 
 ACTOR ICD_BeatingHeartColumn : ICD_ObjectTemplate replaces HeartColumn
 {

@@ -85,8 +85,8 @@ ACTOR ICD_GS_EmptyCasingSmoke
 
 ACTOR ICD_GS_CasingTemplate
 {
-	Height 2
-	Radius 2
+	Height 4
+	Radius 4
 	Speed 3
 	Mass 0
 	BounceType "None"
