@@ -11,10 +11,10 @@ ACTOR ICD_Revolver : BaseWeapon
 	States
 	{
 		Select:
-			TNT1 A 0 A_PlaySound("weapons/generic/holsterup", CHAN_BODY)
+			TNT1 A 0 A_PlaySound("icd/holstr", CHAN_BODY)
 			REVG A 1 A_Raise
 			REVG A 5 A_Raise
-			REVG A 0 A_PlaySound("weapons/1911/hammer", CHAN_WEAPON)
+			REVG A 0 A_PlaySound("icd/hammr", CHAN_WEAPON)
 			REVG A 1 A_Raise
 			Wait
 		Deselect:
@@ -25,17 +25,17 @@ ACTOR ICD_Revolver : BaseWeapon
 			Loop
 		Fire:
 			TNT1 A 0 A_JumpIfInventory("ICD_RevolverMagazine",1,2)
-			TNT1 A 0 A_JumpIfInventory("ICD_Bullets",1,"Reload.After")
+			TNT1 A 0 A_JumpIfInventory("ICD_Bullets",1,"Reload.Dryfire")
 			Goto Ready
 			TNT1 A 0 A_AlertMonsters
 			TNT1 A 0 A_TakeInventory("ICD_RevolverMagazine", 1)
-			TNT1 A 0 A_PlaySound("weapons/revolver/fire", CHAN_WEAPON)
+			TNT1 A 0 A_PlaySound("icd/magnm", CHAN_WEAPON)
 			TNT1 A 0 A_GunFlash
-			REVG H 2 A_FireBullets(1.2,1.2,-1,(28*random(1,1.285)),"ICD_BulletPuff")
-			TNT1 A 0 A_FireCustomMissile("ICD_Gun3_Sparks", frandom(-5,5),0,0,0,0,frandom(-5,5))
-			TNT1 A 0 A_FireCustomMissile("ICD_SHOTGUN_SMOKE", frandom(-9,9),0,0,0,0,frandom(-5,5))
-			TNT1 A 0 A_FireCustomMissile("ICD_Gun3_Sparks", frandom(-5,5),0,0,0,0,frandom(-5,5))
-			REVG H 2 A_FireCustomMissile("ICD_SHOTGUN_SMOKE", frandom(-9,9),0,0,0,0,frandom(-5,5))
+			REVG H 2 A_FireBullets(1.2,1.2,-1,(random(28,36)),"ICD_PUFF")
+			TNT1 A 0 A_FireProjectile("ICD_Gun3_Sparks", frandom(-5,5),0,0,0,0,frandom(-5,5))
+			TNT1 A 0 A_FireProjectile("ICD_SHOTGUN_SMOKE", frandom(-9,9),0,0,0,0,frandom(-5,5))
+			TNT1 A 0 A_FireProjectile("ICD_Gun3_Sparks", frandom(-5,5),0,0,0,0,frandom(-5,5))
+			REVG H 2 A_FireProjectile("ICD_SHOTGUN_SMOKE", frandom(-9,9),0,0,0,0,frandom(-5,5))
 			REVG C 2
 			TNT1 A 0 A_Jump(128,2)
 			REVG D 3
@@ -57,7 +57,7 @@ ACTOR ICD_Revolver : BaseWeapon
 		Reload.Actual:
 			REVG E 3
 			REVG F 3
-			REVG G 3 A_PlaySound("weapons/revolver/mout", CHAN_BODY)
+			REVG G 3 A_PlaySound("icd/mout", CHAN_BODY)
 			TNT1 A 20
 			RHND A 4
 		Reload.InfoPhase:
@@ -65,16 +65,16 @@ ACTOR ICD_Revolver : BaseWeapon
 			TNT1 A 0 A_GiveInventory("ICD_RevolverMagazine", 1)
 			TNT1 A 0 A_JumpIfInventory("ICD_RevolverMagazine", 6, 2)
 			TNT1 A 0 A_JumpIfInventory("ICD_Bullets", 1, "Reload.InfoPhase")
-			RHND B 3 A_PlaySound("weapons/revolver/mload", CHAN_BODY)
+			RHND B 3 A_PlaySound("icd/mload", CHAN_BODY)
 			RHND C 2
 			RHND B 3
 			RHND D 3
 			TNT1 A 10
-			REVG G 3 A_PlaySound("weapons/revolver/min", CHAN_BODY)
+			REVG G 3 A_PlaySound("icd/min", CHAN_BODY)
 			REVG F 3
 			REVG E 3
 			REVG I 3
-			REVG J 3 A_PlaySound("weapons/1911/hammer", CHAN_BODY)
+			REVG J 3 A_PlaySound("icd/hammr", CHAN_BODY)
 			Goto Ready
 	}
 }

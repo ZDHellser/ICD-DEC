@@ -1,24 +1,24 @@
-$random player/pain/breath { player/pain/breath1 player/pain/breath2 player/pain/breath3 player/pain/breath4 player/pain/breath5 }
-player/pain/breath1							DSBRETH1
-player/pain/breath2							DSBRETH2
-player/pain/breath3							DSBRETH3
-player/pain/breath4							DSBRETH4
-player/pain/breath5							DSBRETH5
+$random icd/breth? { icd/breth1 icd/breth2 icd/breth3 icd/breth4 icd/breth5 }
+icd/breth1									DSBRETH1
+icd/breth2									DSBRETH2
+icd/breth3									DSBRETH3
+icd/breth4									DSBRETH4
+icd/breth5									DSBRETH5
 
-$volume player/pain/breath 1.5
+$volume icd/breth? 1.5
 
-$random player/pain/gargle { player/pain/gargle1 player/pain/gargle2}
-player/pain/gargle1							DSGURGL1
-player/pain/gargle2							DSGURGL2
+$random icd/gurgl? { icd/gurgl1 icd/gurgl2}
+icd/gurgl1									DSGURGL1
+icd/gurgl2									DSGURGL2
 
-$random player/pain/smoke { player/pain/smoke1 player/pain/smoke2 }
-player/pain/smoke1 							DSCOUGH1
-player/pain/smoke2							DSCOUGH2
+$volume icd/gurgl? 0.7
 
-$volume player/pain/gargle 0.7
+$random icd/cough? { icd/cough1 icd/cough2 }
+icd/cough1 									DSCOUGH1
+icd/cough2									DSCOUGH2
 
-$random player/grunt/grunt { player/grunt/grunt1 player/grunt/grunt2 }
-player/grunt/grunt1							DSGRUNT2
-player/grunt/grunt2							DSGRUNT2
+$random icd/grunt? { icd/grunt1 icd/grunt2 }
+icd/grunt1									DSGRUNT1
+icd/grunt2									DSGRUNT2
 
-player/death/drowned						DSDRWN
+icd/drwn									DSDRWN

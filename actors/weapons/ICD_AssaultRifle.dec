@@ -9,7 +9,7 @@ ACTOR ICD_AssaultRifle : BaseWeapon
 	Obituary "%o was filled with lead from %k's assault rifle!"
 	+WEAPON.NOALERT
 	+WEAPON.AMMO_OPTIONAL
-	Weapon.UpSound "weapons/generic/weaponup"
+	Weapon.UpSound "icd/weapu?"
 	Tag "Assault Rifle"
 	States
 	{
@@ -24,34 +24,34 @@ ACTOR ICD_AssaultRifle : BaseWeapon
 			Loop
 		Fire:
 			TNT1 A 0 A_JumpIfInventory("ICD_AssaultRifleMagazine",1,2)
-			TNT1 A 0 A_JumpIfInventory("ICD_RifleAmmo",1,"Reload.After")
+			TNT1 A 0 A_JumpIfInventory("ICD_RifleAmmo",1,"Reload.Dryfire")
 			Goto Ready
 		Fire.Actual:
 			CHGG A 0 A_JumpIfInventory("ICD_AssaultRifleMagazine",1,1)
-			Goto Reload.After
+			Goto Reload.Dryfire
 			TNT1 A 0 A_AlertMonsters
-			TNT1 A 0 A_PlaySound("weapons/assaultrifle/fire")
-			CHGG B 1 BRIGHT A_FireBullets(2,2,-1,7,"ICD_BulletPuff")
+			TNT1 A 0 A_PlaySound("icd/asslt")
+			CHGG B 1 BRIGHT A_FireBullets(2,2,-1,(random(7,30)),"ICD_PUFF")
 			TNT1 A 0 BRIGHT A_Jump(168,2)
-			TNT1 A 0 BRIGHT A_FireCustomMissile("ICD_TRACER1", frandom(-2,2),0,4,2,0,frandom(-2,2))
-			TNT1 A 0 BRIGHT A_FireCustomMissile("ICD_M16_Smoke", frandom(-5,5),0,4,2,0,frandom(-5,5))
-			CHGG C 1 BRIGHT A_FireCustomMissile("ICD_AssaultCasingSpawner",0,0,14,-4)
+			TNT1 A 0 BRIGHT A_FireProjectile("ICD_TRACER1", frandom(-2,2),0,4,2,0,frandom(-2,2))
+			TNT1 A 0 BRIGHT A_FireProjectile("ICD_M16_Smoke", frandom(-5,5),0,4,2,0,frandom(-5,5))
+			CHGG C 1 BRIGHT A_FireProjectile("ICD_AssaultCasingSpawner",0,0,14,-4)
 			CHGG A 2
 			CHGG A 0 A_JumpIfInventory("ICD_AssaultRifleMagazine",1,1)
-			Goto Reload.After
+			Goto Reload.Dryfire
 			TNT1 A 0 A_AlertMonsters
-			TNT1 A 0 A_PlaySound("weapons/assaultrifle/fire")
-			CHGG B 1 BRIGHT A_FireBullets(2,2,-1,7,"ICD_BulletPuff")
-			TNT1 A 0 BRIGHT A_FireCustomMissile("ICD_M16_Smoke", frandom(-5,5),0,4,2,0,frandom(-5,5))
-			CHGG C 1 BRIGHT A_FireCustomMissile("ICD_AssaultCasingSpawner",0,0,14,-4)
+			TNT1 A 0 A_PlaySound("icd/asslt")
+			CHGG B 1 BRIGHT A_FireBullets(2,2,-1,(random(7,30)),"ICD_PUFF")
+			TNT1 A 0 BRIGHT A_FireProjectile("ICD_M16_Smoke", frandom(-5,5),0,4,2,0,frandom(-5,5))
+			CHGG C 1 BRIGHT A_FireProjectile("ICD_AssaultCasingSpawner",0,0,14,-4)
 			CHGG A 2
 			CHGG A 0 A_JumpIfInventory("ICD_AssaultRifleMagazine",1,1)
-			Goto Reload.After
+			Goto Reload.Dryfire
 			TNT1 A 0 A_AlertMonsters
-			TNT1 A 0 A_PlaySound("weapons/assaultrifle/fire")
-			CHGG B 1 BRIGHT A_FireBullets(2,2,-1,7,"ICD_BulletPuff")
-			TNT1 A 0 BRIGHT A_FireCustomMissile("ICD_M16_Smoke", frandom(-5,5),0,4,2,0,frandom(-5,5))
-			CHGG C 1 BRIGHT A_FireCustomMissile("ICD_AssaultCasingSpawner",0,0,14,-4)
+			TNT1 A 0 A_PlaySound("icd/asslt")
+			CHGG B 1 BRIGHT A_FireBullets(2,2,-1,(random(7,30)),"ICD_PUFF")
+			TNT1 A 0 BRIGHT A_FireProjectile("ICD_M16_Smoke", frandom(-5,5),0,4,2,0,frandom(-5,5))
+			CHGG C 1 BRIGHT A_FireProjectile("ICD_AssaultCasingSpawner",0,0,14,-4)
 			CHGG A 2
 			CHGG D 8 A_ReFire("Fire.Actual")
 			Goto Ready
@@ -63,8 +63,8 @@ ACTOR ICD_AssaultRifle : BaseWeapon
 			CHGG A 0
 			TNT1 A 0 A_TakeInventory("ICD_AssaultGrenadeMag",1)
 			CHGG A 4 A_GunFlash("Alt.Flash")
-			CHGG A 0 A_PlaySound("weapons/assaultrifle/grenfire")
-			CHGG D 4 A_FireCustomMissile("ICD_AssaultGrenade",0,1,4,-4,0,4)
+			CHGG A 0 A_PlaySound("icd/gren")
+			CHGG D 4 A_FireProjectile("ICD_AssaultGrenade",0,1,4,-4,0,4)
 			CHGG D 4
 			CHGG A 0
 			CHGG A 4
@@ -74,14 +74,14 @@ ACTOR ICD_AssaultRifle : BaseWeapon
 			CHGG A 3
 			CHGG E 4
 			CHGG F 4
-			CHGG J 8 A_PlaySound("weapons/doublebarrel/close")
+			CHGG J 8 A_PlaySound("icd/dbcls")
 			TNT1 A 0
 			CHGG J 12
-			CHGG J 8 A_PlaySound("weapons/40mm/load")
+			CHGG J 8 A_PlaySound("icd/40load")
 			TNT1 A 0 A_TakeInventory("ICD_RocketAmmo",1)
 			TNT1 A 0 A_GiveInventory("ICD_AssaultGrenadeMag",1)
 			CHGG J 12
-			CHGG J 12 A_PlaySound("weapons/doublebarrel/open")
+			CHGG J 12 A_PlaySound("icd/dbopn")
 			CHGG F 3
 			CHGG E 3
 			CHGG A 2
@@ -91,19 +91,19 @@ ACTOR ICD_AssaultRifle : BaseWeapon
 			TNT1 A 0 A_JumpIfInventory("ICD_AssaultRifleMagazine",45,"Ready")
 			TNT1 A 0 A_JumpIfInventory("ICD_RifleAmmo", 1, "Reload.Actual")
 			Goto Ready
-		Reload.After:
-			CHGG A 3 A_PlaySound("weapons/generic/emptyclick2")
-			CHGG A 3 A_PlaySound("weapons/generic/emptyclick2")
-			CHGG A 3 A_PlaySound("weapons/generic/emptyclick2")
+		Reload.Dryfire:
+			CHGG A 3 A_PlaySound("icd/click2")
+			CHGG A 3 A_PlaySound("icd/click2")
+			CHGG A 3 A_PlaySound("icd/click2")
 			Goto Reload+2
 		Reload.Actual:
 			CHGG E 4
 			CHGG N 5
-			CHGG K 4 A_PlaySound("weapons/assaultrifle/clipdrop", CHAN_WEAPON)
+			CHGG K 4 A_PlaySound("icd/m4out", CHAN_WEAPON)
 			CHGG L 5 // EJECT(M16_CLIP_DROP)
 			CHGG G 10
 			CHGG H 4
-			CHGG I 4 A_PlaySound("weapons/assaultrifle/clipin", CHAN_WEAPON)
+			CHGG I 4 A_PlaySound("icd/m4in", CHAN_WEAPON)
 		Reload.InfoPhase:
 			TNT1 A 0 A_TakeInventory("ICD_RifleAmmo",1)
 			TNT1 A 0 A_GiveInventory("ICD_AssaultRifleMagazine",1)
@@ -114,7 +114,7 @@ ACTOR ICD_AssaultRifle : BaseWeapon
 			CHGG E 3
 			CHGG O 4
 			CHGG P 4
-			CHGG Q 4 A_PlaySound("weapons/uzi/suzi2", CHAN_WEAPON)
+			CHGG Q 4 A_PlaySound("icd/suzi2", CHAN_WEAPON)
 			CHGG R 4
 			CHGG O 3
 			CHGG E 3
@@ -159,7 +159,7 @@ ACTOR ICD_AssaultExplosion
 		Spawn:
 			// An ever knowing glitch in ICD, dropping explosions.
 			// This is an updated port. So some things are better.
-			TNT1 A 0 NoDelay A_PlaySound("weapons/boom")
+			TNT1 A 0 NoDelay A_PlaySound("weapons/boom?")
 			BFE1 G 1
 			BFE1 H 1 BRIGHT A_Explode(128)
 			BFE1 IJKLM 1 BRIGHT

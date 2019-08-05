@@ -28,7 +28,7 @@ ACTOR ICD_BronzeBlueTorch : ICD_BigTorchBase replaces BlueTorch
 		Spawn:
 			TBLU AB 4 Bright Light("ICD_BigBlueTorch")
 			TNT1 A 0 A_Explode(5,16)
-			TNT1 A 0 A_PlaySound("world/ambient/magicbigfire")
+			TNT1 A 0 A_PlaySound("icd/fire3")
 			TBLU CD 4 Bright Light("ICD_BigBlueTorch")
 			Loop
 	}
@@ -41,7 +41,7 @@ ACTOR ICD_BronzeGreenTorch : ICD_BigTorchBase replaces GreenTorch
 		Spawn:
 			TGRN AB 4 Bright Light("ICD_BigGreenTorch")
 			TNT1 A 0 A_Explode(5,16)
-			TNT1 A 0 A_PlaySound("world/ambient/magicbigfire")
+			TNT1 A 0 A_PlaySound("icd/fire3")
 			TGRN CD 4 Bright Light("ICD_BigGreenTorch")
 			Loop
 	}
@@ -54,7 +54,7 @@ ACTOR ICD_BronzeRedTorch : ICD_BigTorchBase replaces RedTorch
 		Spawn:
 			TRED AB 4 Bright Light("ICD_BigRedTorch")
 			TNT1 A 0 A_Explode(5,16)
-			TNT1 A 0 A_PlaySound("world/ambient/bigfire")
+			TNT1 A 0 A_PlaySound("icd/fire4")
 			TRED CD 4 Bright Light("ICD_BigRedTorch")
 			Loop
 	}
@@ -67,7 +67,7 @@ ACTOR ICD_WoodenBlueTorch : ICD_LittleTorchBase replaces ShortBlueTorch
 		Spawn:
 			SMBT AB 4 Bright Light("ICD_SmallBlueTorch")
 			TNT1 A 0 A_Explode(5,16)
-			TNT1 A 0 A_PlaySound("world/ambient/magicbigfire")
+			TNT1 A 0 A_PlaySound("icd/fire3")
 			SMBT CD 4 Bright Light("ICD_SmallBlueTorch")
 	}
 }
@@ -79,7 +79,7 @@ ACTOR ICD_WoodenGreenTorch : ICD_LittleTorchBase replaces ShortGreenTorch
 		Spawn:
 			SMGT AB 4 Bright Light("ICD_SmallGreenTorch")
 			TNT1 A 0 A_Explode(5,16)
-			TNT1 A 0 A_PlaySound("world/ambient/magicbigfire")
+			TNT1 A 0 A_PlaySound("icd/fire3")
 			SMGT CD 4 Bright Light("ICD_SmallGreenTorch")
 	}
 }
@@ -91,19 +91,27 @@ ACTOR ICD_WoodenRedTorch : ICD_LittleTorchBase replaces ShortRedTorch
 		Spawn:
 			SMRT AB 4 Bright Light("ICD_SmallRedTorch")
 			TNT1 A 0 A_Explode(5,16)
-			TNT1 A 0 A_PlaySound("world/ambient/bigfire")
+			TNT1 A 0 A_PlaySound("icd/fire4")
 			SMRT CD 4 Bright Light("ICD_SmallRedTorch")
 			SMRT AB 4 Bright Light("ICD_SmallRedTorch")
 			TNT1 A 0 A_Explode(5,16)
-			TNT1 A 0 A_PlaySound("world/ambient/bigfire")
+			TNT1 A 0 A_PlaySound("icd/fire4")
 			SMRT C 4 Bright Light("ICD_SmallRedTorch")
 			TNT1 A 0 A_Jump(150, 2)
-			TNT1 A 0 A_SpawnItemEx("ICD_FireSmoke4", 0,0,40,0,0,0.05)
+			TNT1 A 0 A_SpawnItemEx("ICD_FIRE_SMOKE4", 0,0,40,0,0,0.05)
 			SMRT D 4 Bright Light("ICD_SmallRedTorch")
 	}
 }
 
-
+ACTOR ICD_Candelabra : ICD_BigTorchBase replaces Candelabra
+{
+	States
+	{
+		Spawn:
+			CBRA ABC 8 Bright Light("ICD_Candelabra")
+			loop
+	}
+}
 
 ACTOR ICD_BeatingHeartColumn : ICD_ObjectTemplate replaces HeartColumn
 {
@@ -113,7 +121,7 @@ ACTOR ICD_BeatingHeartColumn : ICD_ObjectTemplate replaces HeartColumn
 	{
 		Spawn:
 			COL5 A 35 NODELAY
-			COL5 B 14 A_PlaySound("world/ambient/heartbeat")
+			COL5 B 14 A_PlaySound("icd/heart")
 			Loop
 	}
 }
@@ -210,7 +218,7 @@ ACTOR ICD_Floating_SkullRock : ICD_ObjectTemplate replaces FloatingSkull
 	States
 	{
 		Spawn:
-			TNT1 A 0 A_PlaySound("world/ambient/fire5")
+			TNT1 A 0 A_PlaySound("icd/fire5")
 			FSKU ABC 8
 			Loop
 	}

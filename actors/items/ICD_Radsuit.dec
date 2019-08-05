@@ -7,7 +7,7 @@ ACTOR ICD_RadSuit : PowerupGiver replaces RadSuit
 	+INVENTORY.ALWAYSPICKUP
 	Powerup.Type "IronFeet"
 	Inventory.PickupMessage "$GotSuit"
-	Inventory.PickupSound "items/item1"
+	Inventory.PickupSound "icd/item1"
 	States
 	{
 		Spawn:

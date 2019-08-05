@@ -3,7 +3,7 @@ ACTOR ICD_Backpack : CustomInventory replaces Backpack
 	Radius 20
 	Height 16
 	Scale 0.82
-	Inventory.PickupSound "items/item1"
+	Inventory.PickupSound "icd/item1"
 	Inventory.PickupMessage "$GotBackpack"
 	States
 	{

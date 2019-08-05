@@ -26,7 +26,7 @@ ACTOR ICD_HealthBonus : Health replaces HealthBonus
 	Inventory.MaxAmount 200
 	Inventory.PickupMessage "$GOTHTHBONUS"
 	Inventory.PickupFlash "ICD_HealthBonusFlash"
-	Inventory.PickupSound "items/healthbonuspickup"
+	Inventory.PickupSound "icd/bonus"
 	Renderstyle Translucent
 	Alpha 0.75
 	Scale 0.9

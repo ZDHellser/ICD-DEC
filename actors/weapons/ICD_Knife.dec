@@ -8,7 +8,7 @@ ACTOR ICD_Knife : BaseWeapon
 	Inventory.Pickupmessage "$ICDKNIFEPICKUP"
 	+WEAPON.NOALERT
 	//+WEAPON.AMMO_OPTIONAL
-	Weapon.UpSound "weapons/knife/upsound"
+	Weapon.UpSound "icd/knf2"
 	Obituary "%k thought he was Riddick."
 	Tag "Knife"
 	States
@@ -24,21 +24,21 @@ ACTOR ICD_Knife : BaseWeapon
 			Loop
 		Fire:
 			KNIF B 3
-			KNIF C 2 A_PlaySound("weapons/knife/knifeswing")
-			KNIF D 1 A_Saw(NULL,"weapons/knife/knifehit",random(3,9),"ICD_KnifeSpark",0,62,6,6)
+			KNIF C 2 A_PlaySound("icd/knife1")
+			KNIF D 1 A_Saw(NULL,"icd/knife3",(random(3,9)),"ICD_KnifeSpark",0,62,6,6)
 			TNT1 A 0 A_Jump(127,"Fire.Two")
-			KNIF E 1 A_Saw(NULL,"weapons/knife/knifehit",random(3,9),"ICD_KnifeSpark",0,62,6,6)
-			KNIF F 1 A_Saw(NULL,"weapons/knife/knifehit",random(3,9),"ICD_KnifeSpark",0,62,6,6)
+			KNIF E 1 A_Saw(NULL,"icd/knife3",(random(3,9)),"ICD_KnifeSpark",0,62,6,6)
+			KNIF F 1 A_Saw(NULL,"icd/knife3",(random(3,9)),"ICD_KnifeSpark",0,62,6,6)
 			KNIF G 2
 			KNIF H 2
 			TNT1 A 3
 			TNT1 A 0 A_Jump(127,"Fire.Rest")
 			TNT1 A 3
 		Fire.Two:
-			KNIF H 2 A_PlaySound("weapons/knife/knifeswing2")
-			KNIF I 2 A_Saw(NULL,NULL,5,"ICD_KnifeSpark2",0,62,6,6)
-			KNIF J 2 A_Saw(NULL,NULL,5,"ICD_KnifeSpark2",0,62,6,6)
-			KNIF K 3 A_Saw(NULL,NULL,5,"ICD_KnifeSpark2",0,62,6,6)
+			KNIF H 2 A_PlaySound("icd/knife2")
+			KNIF I 2 A_Saw(NULL,NULL,(random(5,20)),"ICD_KnifeSpark2",0,62,6,6)
+			KNIF J 2 A_Saw(NULL,NULL,(random(5,20)),"ICD_KnifeSpark2",0,62,6,6)
+			KNIF K 3 A_Saw(NULL,NULL,(random(5,20)),"ICD_KnifeSpark2",0,62,6,6)
 		Fire.Rest:
 			TNT1 A 6
 			TNT1 A 5 A_ReFire
@@ -55,7 +55,7 @@ ACTOR ICD_Knife : BaseWeapon
 			THRW J 2
 			TNT1 A 5
 			THRW J 1
-			THRW K 1 A_FireCustomMissile("ICD_ThrownKnife",frandom(-2,2),1,4,0,0,5)
+			THRW K 1 A_FireProjectile("ICD_ThrownKnife",frandom(-2,2),1,4,0,0,5)
 			THRW BCD 1
 			TNT1 A 16
 			THRW L 2
@@ -102,7 +102,7 @@ ACTOR ICD_ThrownKnife
 	{
 		Spawn:
 			TNT1 A 0
-			TNT1 A 0 A_PlaySound("weapons/knife/knifeswing")
+			TNT1 A 0 A_PlaySound("icd/knife1")
 			KNFE FGHIJA 1
 		Spawn.HoldA:
 			KNFE A 1
@@ -110,17 +110,17 @@ ACTOR ICD_ThrownKnife
 		Bounce.Floor:
 		Bounce.Ceiling:
 		Bounce.Wall:
-			KNFE A 2 A_PlaySound("weapons/generic/smack")
+			KNFE A 2 A_PlaySound("icd/smack")
 			KNFE EAC 2
 		Goto Spawn.HoldA
 		XDeath:
-			TNT1 A 0 A_PlaySound("weapons/knife/knifehit")
+			TNT1 A 0 A_PlaySound("icd/knife3")
 			TNT1 A 0 A_ChangeFlag(NOGRAVITY, 1)
 			KNFE A 5
 			TNT1 A 0 A_SpawnItem("ICD_KnifeAmmo")
 		Stop
 		Death:
-			TNT1 A 0 A_PlaySound("weapons/generic/smack")
+			TNT1 A 0 A_PlaySound("icd/smack")
 			TNT1 A 0 A_ChangeFlag(NOGRAVITY, 1)
 			KNFE A 5
 			TNT1 A 0 A_SpawnItem("ICD_KnifeAmmo")
@@ -143,7 +143,7 @@ ACTOR ICD_KnifeSpark
 	{
 		Spawn:
 			TNT1 A 0
-			TNT1 A 0 A_PlaySound("weapons/knife/knifeslice")
+			TNT1 A 0 A_PlaySound("icd/knf1")
 			SMKE BCDEFGH 2
 			stop
 	}
@@ -166,12 +166,12 @@ ACTOR ICD_KnifeSpark2 : BulletPuff
 		Crash:
 		Spawn:
 			TNT1 A 0
-			TNT1 A 0 A_PlaySound("weapons/knife/knifeslice2")
+			TNT1 A 0 A_PlaySound("icd/knf3")
 			TNT1 A 0 A_SpawnItem("ICD_SPARKS")
 			SMKE BCDEFGH 2
 			stop
 		XDeath:
-			TNT1 A 0 A_PlaySound("weapons/knife/knifegore")
+			TNT1 A 0 A_PlaySound("icd/knf4")
 			stop
 	}
 }

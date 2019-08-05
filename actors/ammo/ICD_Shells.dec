@@ -1,7 +1,7 @@
 ACTOR ICD_Shells : Ammo replaces Shell
 {
 	Inventory.PickupMessage "$GotShells"
-	Inventory.PickupSound "weapons/doublebarrel/load"
+	Inventory.PickupSound "icd/dbload"
 	Inventory.Amount 4
 	Inventory.MaxAmount 36
 	Ammo.BackpackAmount 4
@@ -20,7 +20,7 @@ ACTOR ICD_Shells : Ammo replaces Shell
 ACTOR ICD_Shells2 : ICD_Shells
 {
 	Inventory.PickupMessage "$GotShells"
-	Inventory.PickupSound "weapons/doublebarrel/load"
+	Inventory.PickupSound "icd/dbload"
 	Inventory.Amount 4
 	Radius 20
 	Height 16
@@ -38,7 +38,7 @@ ACTOR ICD_BoxOfShells : ICD_Shells replaces ShellBox
 {
 	Inventory.PickupMessage "$GotShellBox" // "Picked up a box of shotgun shells."
 	Inventory.PickupFlash "ICD_BoxOfShells1"
-	Inventory.PickupSound "weapons/generic/weaponup2"
+	Inventory.PickupSound "icd/weapu2"
 	Inventory.Amount 4
 	Scale 0.85
 	Radius 20
@@ -55,7 +55,7 @@ ACTOR ICD_BoxOfShells1 : ICD_Shells
 {
 	Inventory.PickupMessage "$GOTSHELLBOX" // "Picked up a box of shotgun shells."
 	Inventory.PickupFlash "ICD_BoxOfShells2"
-	Inventory.PickupSound "weapons/generic/weaponup2"
+	Inventory.PickupSound "icd/weapu2"
 	Inventory.Amount 4
 	Scale 0.85
 	Radius 20
@@ -72,7 +72,7 @@ ACTOR ICD_BoxOfShells2 : ICD_Shells
 {
 	Inventory.PickupMessage "$GOTSHELLBOX" // "Picked up a box of shotgun shells."
 	Inventory.PickupFlash "ICD_BoxOfShells3"
-	Inventory.PickupSound "weapons/generic/weaponup2"
+	Inventory.PickupSound "icd/weapu2"
 	Inventory.Amount 4
 	Scale 0.85
 	Radius 20
@@ -89,7 +89,7 @@ ACTOR ICD_BoxOfShells3 : ICD_Shells
 {
 	Inventory.PickupMessage "$GOTSHELLBOX" // "Picked up a box of shotgun shells."
 	Inventory.PickupFlash "ICD_BoxOfShells4"
-	Inventory.PickupSound "weapons/generic/weaponup2"
+	Inventory.PickupSound "icd/weapu2"
 	Inventory.Amount 4
 	Scale 0.85
 	Radius 20
@@ -106,7 +106,7 @@ ACTOR ICD_BoxOfShells4 : ICD_Shells
 {
 	Inventory.PickupMessage "$GOTSHELLBOX2" // "Emptied."
 	Inventory.PickupFlash "ICD_BoxOfShellsEmpty"
-	Inventory.PickupSound "weapons/generic/weaponup2"
+	Inventory.PickupSound "icd/weapu2"
 	Inventory.Amount 4
 	Scale 0.85
 	Radius 20

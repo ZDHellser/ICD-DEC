@@ -9,7 +9,7 @@ actor ICD_Flies
 			FLY1 A 0
 			FLY1 A 0 A_JumpIf(waterlevel > 2, "Death")
 			FLY1 A 0 A_Jump(128,8)
-			FLY1 A 3 A_PlaySound("world/effect/flies", CHAN_BODY)
+			FLY1 A 3 A_PlaySound("icd/fly?", CHAN_BODY)
 			FLY1 BCDEFGH 3
 			FLY1 H 0 A_Jump(128,8)
 			FLY1 IJKLMNHOPQRST 3
@@ -25,7 +25,7 @@ actor ICD_Flies
 			RLSR C 1 A_StopSound(CHAN_BODY)
 			Stop
 		Death:
-			FLY1 A 0 A_PlaySound("world/effect/flies", CHAN_BODY)
+			FLY1 A 0 A_PlaySound("icd/fly?", CHAN_BODY)
 			Stop
 	}
 }

@@ -5,7 +5,7 @@ ACTOR ICD_LightAmp : Infrared replaces Infrared
 	+INVENTORY.AlwaysPickup
 	Inventory.MaxAmount 0
 	Inventory.PickupMessage "$GotNight"
-	Inventory.PickupSound "items/item3"
+	Inventory.PickupSound "icd/item3"
 	Scale 0.64
 	Radius 20
 	Height 16

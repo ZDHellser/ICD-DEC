@@ -2,82 +2,83 @@
 Effects
 */
 
-$random world/effect/flies { game/null game/null game/null game/null world/effect/flies1 world/effect/flies2 world/effect/flies3 world/effect/flies4 }
-$rolloff world/effect/flies 				64 512
-world/effect/flies1							DSFLY1
-world/effect/flies2							DSFLY2
-world/effect/flies3							DSFLY3
-world/effect/flies4							DSFLY4
+$random icd/fly? { icd/null icd/null icd/null icd/null icd/fly1 icd/fly2 icd/fly3 icd/fly4 }
+$rolloff icd/fly? 							64 512
+icd/fly1									DSFLY1
+icd/fly2									DSFLY2
+icd/fly3									DSFLY3
+icd/fly4									DSFLY4
 
-$random world/effect/richochet { world/effect/richochet1 world/effect/richochet2 world/effect/richochet3 }
-world/effect/richochet1						DSRICH1
-world/effect/richochet2						DSRICH2
-world/effect/richochet3						DSRICH3
+$random icd/rich? { world/effect/richochet1 world/effect/richochet2 world/effect/richochet3 }
+icd/rich1									DSRICH1
+icd/rich2									DSRICH2
+icd/rich3									DSRICH3
 
-$random world/effect/bullimpact	{ world/effect/bulletimpact1 world/effect/bulletimpact2 world/effect/bulletimpact3 world/effect/bulletimpact4 world/effect/bulletimpact5 world/effect/bulletimpact6 }
-world/effect/bulletimpact1					DSIMPC1A
-world/effect/bulletimpact2					DSIMPC1B
-world/effect/bulletimpact3					DSIMPC1C
-world/effect/bulletimpact4					DSIMPC1D
-world/effect/bulletimpact5					DSIMPC1E
-world/effect/bulletimpact6					DSIMPC1F
+$random icd/impc1?	{ icd/impc1a icd/impc1b icd/impc1c icd/impc1d icd/impc1e icd/impc1f }
+icd/impc1a									DSIMPC1A
+icd/impc1b									DSIMPC1B
+icd/impc1c									DSIMPC1C
+icd/impc1d									DSIMPC1D
+icd/impc1e									DSIMPC1E
+icd/impc1f									DSIMPC1F
 
 /*
 Gore
 */
 
-$random world/gore/blood { world/gore/blood1 world/gore/blood2 world/gore/blood3 world/gore/blood4 world/gore/blood5 }
-world/gore/blood1							DSBLOOD1
-world/gore/blood2							DSBLOOD2
-world/gore/blood3							DSBLOOD3
-world/gore/blood4							DSBLOOD4
-world/gore/blood5							DSBLOOD5
+$random icd/blood? { icd/blood1 icd/blood2 icd/blood3 icd/blood4 icd/blood5 }
+icd/blood1									DSBLOOD1
+icd/blood2									DSFLESH
+icd/blood3									DSBLOOD3
+icd/blood4									DSFLESH
+icd/blood5									DSBLOOD4
 
-$random world/gore/splat { world/gore/splat1 world/gore/splat2 }
-world/gore/splat1							DSSPLAT1
-world/gore/splat2							DSSPLAT2
+$random icd/splat? { icd/splat1 icd/splat2 }
+icd/splat1									DSSPLAT1
+icd/splat2									DSSPLAT2
 
 /*
 Objects LHUM2
 */
-world/barrel								DSBARRL
+icd/barrl									DSBARRL
+$rolloff icd/barrl							64 170
 
-world/ambient/heartbeat						DSHEART
-$rolloff world/ambient/heartbeat 			64 256
+icd/heart									DSHEART
+$rolloff icd/heart 							64 120
 
-$random world/ambient/killme { world/ambient/killme1 NULL NULL NULL NULL }
-world/ambient/killme1						DSKILLME
-$rolloff world/ambient/killme 				64 256
+$random icd/killme? { icd/killme NULL NULL NULL NULL }
+icd/killme									DSKILLME
+$rolloff icd/killme? 						64 256
 
-world/ambient/squish						DSSQUISH
+icd/squish									DSSQUISH
 
-world/ambient/skulls						DSSKULLS
+icd/skulls									DSSKULLS
 
-world/ambient/fire5							DSFIRE3
-$volume world/ambient/fire5					0.5
-$rolloff world/ambient/fire5				64 256
+icd/fire5									DSFIRE3
+$volume icd/fire5							0.5
+$rolloff icd/fire5							64 256
 
-world/ambient/tech							DSTECH
-$rolloff world/ambient/tech					64 256
-$volume world/ambient/tech					0.86
+icd/tech									DSTECH
+$rolloff icd/tech							64 256
+$volume icd/tech							0.86
 
-world/ambient/yellowlamp					DSLHUM2
-$rolloff world/ambient/yellowlamp			64 256
+icd/lhum2									DSLHUM2
+$rolloff icd/lhum2							64 256
 
-world/ambient/bust							DSBUST
+icd/bust									DSBUST
 
-world/ambient/techlamp2						DSLHUM1
-$rolloff world/ambient/techlamp2			64 256
+icd/lhum1									DSLHUM1
+$rolloff icd/lhum1							64 256
 
-world/ambient/techlamp  					DSLHUM3
-$rolloff world/ambient/techlamp				64 256
+icd/lhum3  									DSLHUM3
+$rolloff icd/lhum3							64 256
 
-world/ambient/spark							DSBUZZ
+icd/buzz									DSBUZZ
 
-world/ambient/magicbigfire					DSFIRE3
-world/ambient/bigfire						DSFIRE4
+icd/fire3									DSFIRE3
+icd/fire4									DSFIRE4
 
-$rolloff world/ambient/magicbigfire			64 256
-$rolloff world/ambient/bigfire				64 256
-$volume world/ambient/magicbigfire			0.62
-$volume world/ambient/bigfire				0.66
+$rolloff icd/fire3							64 256
+$rolloff icd/fire4							64 256
+$volume icd/fire3							0.62
+$volume icd/fire4							0.66

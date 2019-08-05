@@ -8,10 +8,10 @@ ACTOR BaseWeapon : Weapon
 }
 
 /*----------------------------------------
- WEAPON PUFF?
+ WEAPON SPARKS
 ----------------------------------------*/
 
-ACTOR ICD_Puff_Spawn_2
+ACTOR ICD_SPARKS
 {
 	Game Doom
 	+NOBLOCKMAP
@@ -24,7 +24,7 @@ ACTOR ICD_Puff_Spawn_2
 	States
 	{
 		Spawn:
-			SPUF ABCD 1 BRIGHT Light("ICD_Sparks")
+			SPUF ABCD 2 BRIGHT Light("ICD_Sparks")
 			stop
 	}
 }
@@ -65,6 +65,7 @@ ACTOR ICD_GunSmokeBase
 
 /*----------------------------------------
  WEAPON CASINGS
+ Borrowed from Genesis Saga: Aurora
 ----------------------------------------*/
 
 ACTOR ICD_GS_EmptyCasingSmoke
@@ -84,8 +85,8 @@ ACTOR ICD_GS_EmptyCasingSmoke
 
 ACTOR ICD_GS_CasingTemplate
 {
-	Height 2
-	Radius 2
+	Height 4
+	Radius 4
 	Speed 3
 	Mass 0
 	BounceType "None"
