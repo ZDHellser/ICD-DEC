@@ -5,7 +5,7 @@ ACTOR ICD_ShotgunGuy replaces ShotgunGuy
 	Health 30
 	Radius 20
 	Height 56
-	Mass 100
+	Mass 400
 	Speed 8
 	PainChance 170
 	MinMissileChance 56

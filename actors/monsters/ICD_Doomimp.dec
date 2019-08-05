@@ -6,7 +6,7 @@ ACTOR ICD_Impse	replaces DoomImp
 	Health 64
 	Radius 20
 	Height 56
-	Mass 100
+	Mass 400
 	Speed 8
 	PainChance 200
 	Monster

@@ -6,6 +6,7 @@ ACTOR ICD_ZombieMan replaces Zombieman
 	Speed 8
 	PainChance 200
 	MinMissileChance 102
+	Mass 400
 	Monster
 	+FLOORCLIP
 	SeeSound "grunt/sight"

@@ -41,9 +41,9 @@ ACTOR ICD_Chainsaw : BaseWeapon replaces Chainsaw
 			Goto Ready.On
 		Fire:
 			TNT1 A 0 A_AlertMonsters
-			SAWG A 3 A_Saw("icd/sawful2", "icd/sawhit2", 5, "ICD_BayonetSpark", 0, 64, 12, 6)
+			SAWG A 3 A_Saw("icd/sawful2", "icd/sawhit2", (random(10,20)), "ICD_BayonetSpark", 0, 64, 12, 6)
 			TNT1 A 0 A_FireProjectile("ICD_CHAINSAW_SMOKE2_Spawner",0,0,6,-8)
-			SAWG B 3 A_Saw("icd/sawful2", "icd/sawhit2", 5, "ICD_BayonetSpark", 0, 64, 12, 6)
+			SAWG B 3 A_Saw("icd/sawful2", "icd/sawhit2", (random(10,20)), "ICD_BayonetSpark", 0, 64, 12, 6)
 			TNT1 A 0 A_FireProjectile("ICD_CHAINSAW_SMOKE2_Spawner",0,0,6,-8)
 			Goto Ready.On
 		Spawn:

@@ -24,32 +24,32 @@ ACTOR ICD_AssaultRifle : BaseWeapon
 			Loop
 		Fire:
 			TNT1 A 0 A_JumpIfInventory("ICD_AssaultRifleMagazine",1,2)
-			TNT1 A 0 A_JumpIfInventory("ICD_RifleAmmo",1,"Reload.After")
+			TNT1 A 0 A_JumpIfInventory("ICD_RifleAmmo",1,"Reload.Dryfire")
 			Goto Ready
 		Fire.Actual:
 			CHGG A 0 A_JumpIfInventory("ICD_AssaultRifleMagazine",1,1)
-			Goto Reload.After
+			Goto Reload.Dryfire
 			TNT1 A 0 A_AlertMonsters
 			TNT1 A 0 A_PlaySound("icd/asslt")
-			CHGG B 1 BRIGHT A_FireBullets(2,2,-1,7,"ICD_PUFF")
+			CHGG B 1 BRIGHT A_FireBullets(2,2,-1,(random(7,30)),"ICD_PUFF")
 			TNT1 A 0 BRIGHT A_Jump(168,2)
 			TNT1 A 0 BRIGHT A_FireProjectile("ICD_TRACER1", frandom(-2,2),0,4,2,0,frandom(-2,2))
 			TNT1 A 0 BRIGHT A_FireProjectile("ICD_M16_Smoke", frandom(-5,5),0,4,2,0,frandom(-5,5))
 			CHGG C 1 BRIGHT A_FireProjectile("ICD_AssaultCasingSpawner",0,0,14,-4)
 			CHGG A 2
 			CHGG A 0 A_JumpIfInventory("ICD_AssaultRifleMagazine",1,1)
-			Goto Reload.After
+			Goto Reload.Dryfire
 			TNT1 A 0 A_AlertMonsters
 			TNT1 A 0 A_PlaySound("icd/asslt")
-			CHGG B 1 BRIGHT A_FireBullets(2,2,-1,7,"ICD_PUFF")
+			CHGG B 1 BRIGHT A_FireBullets(2,2,-1,(random(7,30)),"ICD_PUFF")
 			TNT1 A 0 BRIGHT A_FireProjectile("ICD_M16_Smoke", frandom(-5,5),0,4,2,0,frandom(-5,5))
 			CHGG C 1 BRIGHT A_FireProjectile("ICD_AssaultCasingSpawner",0,0,14,-4)
 			CHGG A 2
 			CHGG A 0 A_JumpIfInventory("ICD_AssaultRifleMagazine",1,1)
-			Goto Reload.After
+			Goto Reload.Dryfire
 			TNT1 A 0 A_AlertMonsters
 			TNT1 A 0 A_PlaySound("icd/asslt")
-			CHGG B 1 BRIGHT A_FireBullets(2,2,-1,7,"ICD_PUFF")
+			CHGG B 1 BRIGHT A_FireBullets(2,2,-1,(random(7,30)),"ICD_PUFF")
 			TNT1 A 0 BRIGHT A_FireProjectile("ICD_M16_Smoke", frandom(-5,5),0,4,2,0,frandom(-5,5))
 			CHGG C 1 BRIGHT A_FireProjectile("ICD_AssaultCasingSpawner",0,0,14,-4)
 			CHGG A 2
@@ -91,7 +91,7 @@ ACTOR ICD_AssaultRifle : BaseWeapon
 			TNT1 A 0 A_JumpIfInventory("ICD_AssaultRifleMagazine",45,"Ready")
 			TNT1 A 0 A_JumpIfInventory("ICD_RifleAmmo", 1, "Reload.Actual")
 			Goto Ready
-		Reload.After:
+		Reload.Dryfire:
 			CHGG A 3 A_PlaySound("icd/click2")
 			CHGG A 3 A_PlaySound("icd/click2")
 			CHGG A 3 A_PlaySound("icd/click2")
