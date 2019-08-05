@@ -38,6 +38,7 @@ icd/pout									DSPOUT
 icd/pin										DSPIN
 icd/pslide									DSPSLIDE
 icd/clp1a									DSCLP1A
+icd/item2									DSITEM2
 
 //Sawed Off
 icd/sawed1									DSSAWED1

@@ -25,7 +25,7 @@ ACTOR ICD_Satchel : BaseWeapon
 			CHRG F 12 A_GunFlash("Overlay")
 			CHRG J 4 A_PlaySound("icd/click")
 			CHRG D 4 A_PlaySound("icd/satch2")
-			CHRG F 4 A_FireCustomMissile("ICD_ThrownSatchel", 0, 1, -4, 0, 0, 4)
+			CHRG F 4 A_FireProjectile("ICD_ThrownSatchel", 0, 1, -4, 0, 0, 4)
 			CHRG F 4 // Refire
 			Goto Ready
 		Overlay:

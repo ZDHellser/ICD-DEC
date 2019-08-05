@@ -51,6 +51,7 @@
 
 //Slot # 0 (Accessories)
 #include "actors/weapons/icd_flareweapon.dec"
+#include "actors/weapons/icd_silenced.dec"
 
 //Effects
 #include "actors/effects/icd_flareeffect.dec"

@@ -17,6 +17,8 @@ ACTOR ICD_DoomPlayer : PlayerPawn replaces DoomPlayer
 	Player.StartItem "ICD_Bullets", 38
 	Player.StartItem "ICD_ArmorStart", 1
 	Player.StartItem "ICD_KnifeAmmo", 2
+	Player.StartItem "ICD_Silenced"
+	Player.StartItem "ICD_SilencedPistolMagazine", 12
 	Player.AttackZOffset 12
 	Player.WeaponSlot 1, ICD_Knife, ICD_Chainsaw
 	Player.WeaponSlot 2, ICD_Pistol, ICD_DualPistol
@@ -26,7 +28,7 @@ ACTOR ICD_DoomPlayer : PlayerPawn replaces DoomPlayer
 	Player.WeaponSlot 6, ICD_AssaultRifle, ICD_InfantryRifle
 	Player.WeaponSlot 7, ICD_Revolver, ICD_Beretta, ICD_SawedOff, ICD_Minigun
 	Player.WeaponSlot 9, ICD_Satchel
-	Player.WeaponSlot 0, ICD_FlareWeapon
+	Player.WeaponSlot 0, ICD_FlareWeapon, ICD_Silenced
 
 	Player.ColorRange 112, 127
 	Player.ColorSet 0, "Green",				 0x70, 0x7F,	0x72
