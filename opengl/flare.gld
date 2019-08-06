@@ -4,4 +4,5 @@ flickerlight ICD_FlareEffect
     size 200
     secondarySize 230
     chance 0.4
+	attenuate 1
 }

@@ -223,3 +223,17 @@ ACTOR ICD_Floating_SkullRock : ICD_ObjectTemplate replaces FloatingSkull
 			Loop
 	}
 }
+
+ACTOR ICD_Black_Candle : ICD_ObjectTemplate replaces Candlestick
+{
+	Radius 16
+	Height 16
+	-SOLID
+	States
+	{
+		Spawn:
+			CAND DBCB 6 BRIGHT Light("ICD_Candle")
+			Loop
+	}
+}
+	

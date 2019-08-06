@@ -4,6 +4,7 @@ pulselight ICD_ArmorBonus
 	size 8
 	secondarysize 10
 	interval 2
+	attenuate 1
 }
 
 pulselight ICD_HealthBonus
@@ -12,12 +13,14 @@ pulselight ICD_HealthBonus
 	size 8
 	secondarysize 10
 	interval 2
+	attenuate 1
 }
 
 pointlight ICD_SkullColumn
 {
 	color 1.0 1.0 0.18
 	size 37
+	attenuate 1
 }
 
 pointlight ICD_EvilEye
@@ -25,6 +28,7 @@ pointlight ICD_EvilEye
 	color 0.0 1.0 0.0
 	size 37
 	offset 0 40 0
+	attenuate 1
 }
 
 flickerlight2 ICD_BigRedTorch
@@ -33,7 +37,8 @@ flickerlight2 ICD_BigRedTorch
     size 75
     secondarySize 100
     interval 0.00875
-	offset 0 42 0
+	offset 0 54 0
+	attenuate 1
 }
 
 flickerlight2 ICD_BigGreenTorch
@@ -42,7 +47,8 @@ flickerlight2 ICD_BigGreenTorch
     size 75
     secondarySize 100
     interval 0.00875
-	offset 0 42 0
+	offset 0 54 0
+	attenuate 1
 }
 
 flickerlight2 ICD_BigBlueTorch
@@ -51,7 +57,8 @@ flickerlight2 ICD_BigBlueTorch
     size 75
     secondarySize 100
     interval 0.00875
-	offset 0 42 0
+	offset 0 54 0
+	attenuate 1
 }
 
 flickerlight2 ICD_SmallRedTorch
@@ -60,7 +67,8 @@ flickerlight2 ICD_SmallRedTorch
     size 75
     secondarySize 100
     interval 0.00875
-	offset 0 26 0
+	offset 0 34 0
+	attenuate 1
 }
 
 flickerlight2 ICD_SmallGreenTorch
@@ -69,7 +77,8 @@ flickerlight2 ICD_SmallGreenTorch
     size 75
     secondarySize 100
     interval 0.00875
-	offset 0 26 0
+	offset 0 34 0
+	attenuate 1
 }
 
 flickerlight2 ICD_SmallBlueTorch
@@ -78,33 +87,56 @@ flickerlight2 ICD_SmallBlueTorch
     size 75
     secondarySize 100
     interval 0.00875
-	offset 0 26 0
+	offset 0 34 0
+	attenuate 1
+}
+
+flickerlight2 ICD_BurningBarrel
+{
+	color 1.0 1.0 0.07
+	size 50
+    secondarySize 68
+    interval 0.00875
+	offset 0 28 0
+	attenuate 1
 }
 
 pointlight ICD_YellowLamp
 {
 	color 1.0 1.0 0.53
-	size 62
-	offset 0 26 0
+	size 80
+	offset 0 43 0
+	attenuate 1
 }
 
 pointlight ICD_TechLamp2
 {
 	color 0.5 0.5 1
 	size 75
-	offset 0 26 0
+	offset 0 55 0
+	attenuate 1
 }
 
 pointlight ICD_TechLamp
 {
 	color 0.5 0.5 1
-	size 125
-	offset 0 48 0
+	size 160
+	offset 0 74 0
+	attenuate 1
 }
 
 pointlight ICD_Candelabra
 {
 	color 1.0 1.0 0.06
-	size 50
+	size 64
 	offset 0 48 0
+	attenuate 1
+}
+
+pointlight ICD_Candle
+{
+	color 1.0 1.0 0.18
+	size 24
+	offset 0 15 0
+	attenuate 1
 }

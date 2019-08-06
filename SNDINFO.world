@@ -75,10 +75,15 @@ $rolloff icd/lhum3							64 256
 
 icd/buzz									DSBUZZ
 
+icd/fire1									DSFIRE1
+icd/fire2									DSFIRE2
 icd/fire3									DSFIRE3
 icd/fire4									DSFIRE4
 
+$rolloff icd/fire1							64 210
 $rolloff icd/fire3							64 256
 $rolloff icd/fire4							64 256
+$volume icd/fire1							0.96
 $volume icd/fire3							0.62
 $volume icd/fire4							0.66
+

@@ -1,4 +1,4 @@
-ACTOR ICD_ExplosiveJizzum replaces ExplosiveBarrel //It's more than sour. It's barrels!
+ACTOR ICD_ExplosiveBarrel replaces ExplosiveBarrel
 {
 	Radius 14
 	Height 32
@@ -58,4 +58,28 @@ ACTOR ICD_BarrelExplosion
 			BFE1 JKLMNOPQRSTUVW 2 BRIGHT
 			stop
 	}
+}
+
+ACTOR ICD_BurningBarrel replaces BurningBarrel
+{
+	Radius 14
+	Height 30
+	+SOLID
+	+SHOOTABLE
+	+NOBLOOD
+	+DONTTHRUST
+	+NODAMAGE
+	States
+		{
+			Spawn:
+				FCAN A 0 Bright 
+				FCAN A 5 Bright Light("ICD_BurningBarrel")
+				FCAN A 0 Bright A_PlaySound("icd/FIRE1", 4, 1, 1)
+				FCAN B 5 Bright Light("ICD_BurningBarrel") A_Explode((20), 16, XF_NOSPLASH)
+				FCAN B 0 Bright A_Jump(153, 2)
+				FCAN B 0 Bright Light("ICD_BurningBarrel") A_SpawnItemEx("ICD_FIRE_SMOKE4", random(-4,4), random(-4,4), 38)
+				FCAN A 0 Bright
+				FCAN C 5 Bright Light("ICD_BurningBarrel")
+				Loop
+		}
 }
