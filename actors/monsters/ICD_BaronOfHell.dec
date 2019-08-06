@@ -6,6 +6,7 @@ ACTOR ICD_BaronOfHell replaces BaronOfHell
 	Mass 1000
 	Speed 8
 	PainChance 50
+	MinMissileChance 153
 	Monster
 	+FLOORCLIP
 	+BOSSDEATH

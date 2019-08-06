@@ -9,6 +9,7 @@ ACTOR ICD_Impse	replaces DoomImp
 	Mass 400
 	Speed 8
 	PainChance 200
+	MinMissileChance 204
 	Monster
 	+FLOORCLIP
 	+DOHARMSPECIES
@@ -37,7 +38,7 @@ ACTOR ICD_Impse	replaces DoomImp
 		Melee:
 		Missile:
 			TROO EF 7 A_FaceTarget
-			TROO G 5 A_TroopAttack
+			TROO G 5 A_CustomComboAttack("ICD_ImpBall", 32, (random(8,32)), "imp/melee")
 			Goto See
 		Pain:
 			TROO H 2
@@ -72,7 +73,7 @@ ACTOR ICD_ImpBall replaces DoomImpBall
 	Height 8
 	Speed 10
 	FastSpeed 20
-	Damage (3/2*random(1,8))
+	Damage (random(3,24))
 	Projectile
 	+RANDOMIZE
 	RenderStyle translucent

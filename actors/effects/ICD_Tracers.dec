@@ -12,7 +12,7 @@ ACTOR ICD_TRACER1
 			PUFF A 1 BRIGHT
 			Loop
 		Death:
-			PUFF A 1 BRIGHT A_SpawnItem("ICD_FlakSmoke")
+			PUFF A 1 BRIGHT A_SpawnItem("ICD_QPUFF")
 			Stop
 	}
 }

@@ -56,7 +56,7 @@ ACTOR ICD_RPUFF : ICD_GunSmokeBase
 
 }
 
-ACTOR ICD_FlakSmoke : ICD_GS_EmptyCasingSmoke
+ACTOR ICD_QPUFF : ICD_GS_EmptyCasingSmoke
 {
 	scale 0.7
 }
@@ -202,7 +202,7 @@ ACTOR ICD_FLARE_SMOKE : ICD_GunSmokeBase
 			TNT1 A 0 A_JumpIf(waterlevel==3,"Bubbles")
 			TNT1 A 0 A_SpawnItemEx("ICD_Flare_Sparks_Red",0,0,0,frandom(-2,2), frandom(-2,2), frandom(2,3),0,SXF_NOCHECKPOSITION)
 			TNT1 A 0 A_SpawnItemEx("ICD_Flare_Sparks_Yellow",0,0,0,frandom(-2,2), frandom(-2,2), frandom(2,3),0,SXF_NOCHECKPOSITION)
-			SMOK A 1 ThrustThingZ(0, 1.2, 0, 1)
+			SMOK A 1 ThrustThingZ(0, 1, 0, 1)
 			SMOK A 2
 			SMOK A 0 // Flare2
 		SpawnJump:
@@ -216,7 +216,7 @@ ACTOR ICD_FLARE_SMOKE : ICD_GunSmokeBase
 		Bubbles:
 			TNT1 A 0 A_SetScale(0.5)
 			TNT1 A 0 ThrustThingZ(0,1,0,1)
-			BUBB A 1 A_Weave(random(-0.5, 5),0,0,0)
+			BUBB A 1 A_Weave(random(-2, 2),0,0,0)
 			TNT1 A 0 A_JumpIf(waterlevel<2, "Death")
 			TNT1 A 0 A_Jump(1, "Death")
 			Loop
@@ -235,7 +235,7 @@ ACTOR ICD_FlareBubble : ICD_FLARE_SMOKE
 	{
 		Spawn:
 			TNT1 A 0 ThrustThingZ(0,1,0,1)
-			BUBB A 1 A_Weave(random(-0.5, 5),0,0,0)
+			BUBB A 1 A_Weave(random(2, 2),0,0,0)
 			TNT1 A 0 A_JumpIf(waterlevel<2, "Death")
 			TNT1 A 0 A_Jump(1, "Death")
 			Loop
@@ -338,4 +338,23 @@ ACTOR ICD_FIRE_SMOKE4
 			Stop
 	}
 }
-			
+/*---------------------------------------------------------------------
+Ah, Sparks. Knife Sparks, Sparks, just Sparks. Not all here though.
+Will be in the near future.
+---------------------------------------------------------------------*/
+
+ACTOR ICD_SPARKS
+{
+	Radius 8
+	Height 16
+	+NOINTERACTION
+	States
+	{
+		Spawn:
+			SPUF A 2 Bright
+			SPUF B 2 Bright A_PlaySound("icd/buzz")
+			SPUF C 2 Bright A_Explode(20,32)
+			SPUF D 2 Bright
+			Stop
+	}
+}

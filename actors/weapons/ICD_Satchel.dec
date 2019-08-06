@@ -3,7 +3,7 @@ ACTOR ICD_Satchel : BaseWeapon
 {
 	Game Doom
 	Weapon.UpSound "icd/weapu?"
-	Tag "Satchel Charges"
+	Tag "$TAG_SATCHEL"
 	Inventory.PickupMessage "$GotSatchel"
 	Weapon.AmmoType "ICD_SatchelAmmo"
 	+WEAPON.AMMO_OPTIONAL

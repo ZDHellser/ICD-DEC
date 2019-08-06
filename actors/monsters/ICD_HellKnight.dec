@@ -3,6 +3,7 @@ ACTOR ICD_HellKnight : ICD_BaronOfHell replaces HellKnight
 	Game Doom
 	SpawnID 113
 	Health 500
+	MinMissileChance 204
 	-BOSSDEATH
 	SeeSound "knight/sight"
 	ActiveSound "knight/active"
@@ -55,7 +56,7 @@ ACTOR ICD_HellKnightBall
 	  Height 16
 	  Speed 15
 	  FastSpeed 20
-	  Damage (8/2*random(1,6.75))
+	  Damage 8
 	  Projectile
 	  +RANDOMIZE
 	  RenderStyle Add

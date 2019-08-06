@@ -116,19 +116,3 @@ ACTOR ICD_Lamp_Smoke_Spawn
 			Stop
 	}
 }
-
-ACTOR ICD_Sparks
-{
-	Radius 8
-	Height 16
-	+NOINTERACTION
-	States
-	{
-		Spawn:
-			SPUF A 2 Bright
-			SPUF B 2 Bright A_PlaySound("icd/buzz")
-			SPUF C 2 Bright A_Explode(20,32)
-			SPUF D 2 Bright
-			Stop
-	}
-}

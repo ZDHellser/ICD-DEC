@@ -4,6 +4,7 @@ He also desires for the blood sound to sound.. 'beefy' when used
 with the shotguns, as it did in ICD. Here's my attempt, Ryan.
 */
 
+/*
 ACTOR ICD_Blood replaces Blood
 {
 	Mass 5
@@ -25,6 +26,7 @@ ACTOR ICD_Blood replaces Blood
 			Stop
 	}
 }
+*/
 
 ACTOR ICD_Blood_Splat
 {

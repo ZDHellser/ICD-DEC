@@ -12,7 +12,7 @@
 // "Engine" Core
 #include "actors/core/icd_playerpawn.dec"
 #include "actors/core/icd_base.dec"
-//include "actors/core/icd_gore.dec"
+#include "actors/core/icd_gore.dec"
 
 //Weapons
 //Slot #1 (Melee)

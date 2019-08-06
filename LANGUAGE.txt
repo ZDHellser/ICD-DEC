@@ -44,3 +44,32 @@ GotShotgun="You got the shotgun!";
 GotMinigun="You got the minigun!";
 GotBeretta="You got the 9mm pistol!";
 GotMagnum="You got the magnum!";
+
+
+TAG_PISTOL=".45 Pistol";
+TAG_DUALPISTOLS="Dual .45 Pistols";
+
+TAG_REMINGTON="Combat Shotgun";
+TAG_FLAKSHOTGUN="Upgraded Combat Shotgun";
+TAG_DOUBLEBARREL="Double Barreled Shotgun";
+
+TAG_UZI="Uzi SMG";
+TAG_DUALUZI="Dual Uzis";
+
+TAG_GRENADES="Hand Grenades";
+TAG_40MM="40mm Grenade Launcher";
+
+TAG_ARIFLE="M-16A1 Assault Rifle";
+TAG_IRIFLE="M-211 Infantry Rifle";
+
+TAG_MINIGUN="Minigun";
+TAG_SAWEDOFF="Sawed-off Shotgun";
+TAG_REVOLVER=".357 Magnum Revolver";
+TAG_BERETTA="9mm Automatic PIstol";
+
+TAG_SAW="Gas Powered Chainsaw";
+
+TAG_SATCHEL="Satchel Charges";
+
+TAG_SILENCED="Silenced .45 Pistol";
+TAG_FLARES="Marking Flares";

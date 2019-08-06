@@ -1,6 +1,10 @@
 ACTOR ICD_Chainsaw : BaseWeapon replaces Chainsaw
 {
 	+WEAPON.NOALERT
+	+WEAPON.AMMO_OPTIONAL // Must be here given the chainsaw's unusual ammo system (Snarboo)
+	Weapon.AmmoType "ICD_ChainsawGas"
+	Weapon.AmmoUse 1
+	//  Weapon.AmmoGive 2150 - Mostly for debugging (Snarboo)
 	Inventory.PickupMessage "$GotChainsaw"
 	Obituary "%o got too close to %k's chainsaw!"
 	Tag "Chainsaw"
@@ -16,8 +20,10 @@ ACTOR ICD_Chainsaw : BaseWeapon replaces Chainsaw
 			SAWG C 1 A_Lower
 			Wait
 		Ready:
+			TNT1 A 0 A_JumpIfNoAmmo ("Reload") // - Added by Snarboo
 			Goto Ready.Rev
 		Ready.On:
+			TNT1 A 0 A_JumpIfNoAmmo ("Reload") // - Added by Snarboo
 			SAWG C 4 A_WeaponReady
 			TNT1 A 0 A_PlaySound("icd/sawidl2", CHAN_WEAPON)
 			TNT1 A 0 A_FireProjectile("ICD_CHAINSAW_SMOKE_Spawner",0,0,6,-8)
@@ -40,12 +46,32 @@ ACTOR ICD_Chainsaw : BaseWeapon replaces Chainsaw
 			SAWG D 4
 			Goto Ready.On
 		Fire:
+			TNT1 A 0 A_JumpIfNoAmmo ("Reload") // - Added by Snarboo
 			TNT1 A 0 A_AlertMonsters
 			SAWG A 3 A_Saw("icd/sawful2", "icd/sawhit2", (random(10,20)), "ICD_BayonetSpark", 0, 64, 12, 6)
 			TNT1 A 0 A_FireProjectile("ICD_CHAINSAW_SMOKE2_Spawner",0,0,6,-8)
 			SAWG B 3 A_Saw("icd/sawful2", "icd/sawhit2", (random(10,20)), "ICD_BayonetSpark", 0, 64, 12, 6)
 			TNT1 A 0 A_FireProjectile("ICD_CHAINSAW_SMOKE2_Spawner",0,0,6,-8)
 			Goto Ready.On
+		AltFire: // - Added by Snarboo
+			// Seems to silence the chainsaw? Not sure what purpose that serves
+			SAWG CC 1 A_WeaponReady (WRF_NOFIRE|WRF_NOSWITCH)
+			SAWG C 1 A_Refire
+			Goto Ready
+		Reload: // - Added by Snarboo
+			TNT1 A 0 A_JumpIfInventory ("ICD_ChainsawGas", 1, "Ready") // All or nothing, baby! (Snarboo)
+			TNT1 A 0 A_GiveInventory ("ICD_ChainsawGas", 2150)
+			TNT1 A 0 A_StopSound (CHAN_WEAPON)
+			SAWG D 4 A_PlaySound ("icd/sawgas", CHAN_BODY)
+			SAWG C 20
+			SAWG B 12
+			SAWG I 10
+			SAWG J 35 A_PlaySound ("icd/item2", CHAN_WEAPON)
+			SAWG J 85 A_PlaySound ("icd/mini5", CHAN_WEAPON)
+			SAWG J 35 A_PlaySound ("icd/item2", CHAN_WEAPON)
+			SAWG I 8 
+		    SAWG E 4
+			Goto Ready // Player still has to rev the chainsaw at this point (Snarboo)
 		Spawn:
 			CSAW A -1
 			Stop
@@ -58,3 +84,26 @@ ACTOR ICD_ChainsawMechanic : Inventory
 	+INVENTORY.IGNORESKILL
 	-INVBAR
 }
+
+ACTOR ICD_ChainsawGas : Ammo // - Added by Snarboo
+/* 
+** In ICD-SE, the chainsaw actually takes gas! It's not an actual pickup,
+** however, but rather makes use of EDGE's weapon clip system to define how much
+** "ammo" it contains AND uses. This has to be defined as a separate ammo type 
+** in ZDoom! 
+*/
+{
+	Inventory.MaxAmount 2150 // Why this amount I have no idea!
+	Ammo.BackpackAmount 0
+	Ammo.BackpackMaxAmount 2150
+	Inventory.Icon CSAWA0
+	+INVENTORY.IGNORESKILL
+}
+
+/*
+Hellser Note (8-5-2019)
+This seems to be a rather stupid mechanic, but maybe Cory Whittle had some sort of
+idea that was not implemented or abandoned. Given that Snarboo and Wildweasel
+did make some progress on ICD-ZD when I first left it, I'll add this function in.
+Also oh my god. Why the mini5 sound for reloading?
+*/

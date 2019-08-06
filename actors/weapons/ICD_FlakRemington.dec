@@ -6,7 +6,7 @@ ACTOR ICD_FlakRemington : BaseWeapon
 	Weapon.AmmoType "ICD_FlakRemingtonMagazine"
 	Weapon.AmmoType2 "Shell"
 	Inventory.PickupMessage "$GotRemington"
-	Tag "Flak Remington"
+	Tag "$TAG_FLAKSHOTGUN"
 	Obituary "%k flakked %o."
 	Weapon.UpSound "icd/weapu?"
 	+WEAPON.AMMO_OPTIONAL
@@ -72,7 +72,7 @@ ACTOR ICD_FLAK
 			TNT1 A 0
 			TNT1 A 0 A_PlaySound("NULL")
 			FRAG A 2 BRIGHT A_Explode(30,32,XF_HURTSOURCE)
-			FRAG A 2 BRIGHT A_SpawnItem("ICD_FlakSmoke")
+			FRAG A 2 BRIGHT A_SpawnItem("ICD_QPUFF")
 			FRAG A 2 BRIGHT
 			Goto Spawn+2
 		 Death:

@@ -27,7 +27,7 @@ ACTOR ICD_Demon replaces Demon
 		Melee:
 			SARG E 6 Fast A_FaceTarget
 			SARG F 7 Fast A_FaceTarget
-			SARG G 7 Fast A_CustomMeleeAttack((6/2*random(1,10)))
+			SARG G 7 Fast A_CustomMeleeAttack(random(6,60))
 			Goto See
 		Pain:
 			SARG H 2 Fast
@@ -57,7 +57,7 @@ ACTOR ICD_Spectre : ICD_Demon replaces Spectre
 		Melee:
 			SARG E 7 Fast A_FaceTarget
 			SARG F 6 Fast A_FaceTarget
-			SARG G 6 Fast A_CustomMeleeAttack((6*random(1,10)))
+			SARG G 6 Fast A_CustomMeleeAttack(random(6,60))
 			Goto See
 	}
 }
