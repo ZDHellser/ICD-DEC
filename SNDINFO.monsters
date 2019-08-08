@@ -1,0 +1,11 @@
+// This SNDINFO lump didn't exist before. -weasel
+// Heavy Weapon Dude
+$random monsters/HeavyWeaponDude/See { icd/cgsit1 icd/cgsit2 }
+icd/cgsit1 dscgsit1
+icd/cgsit2 dscgsit2
+monsters/HeavyWeaponDude/Pain 		dscgpain
+monsters/HeavyWeaponDude/Death 		dscgdth1
+monsters/HeavyWeaponDude/Active		dscgsact
+
+//arachnotron
+icd/plasma				 			dsplasma

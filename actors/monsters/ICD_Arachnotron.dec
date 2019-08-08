@@ -1,0 +1,100 @@
+Actor ICD_Arachnotron replaces Arachnotron
+{
+	HEALTH 300
+	RADIUS 64
+	HEIGHT 64
+	SPEED 12
+	MASS 600
+	PAINCHANCE 128
+	Monster
+    +FLOORCLIP
+    +BOSSDEATH
+	SeeSound "baby/sight"
+	PainSound "baby/pain"
+	DeathSound "baby/death"
+	ActiveSound "baby/active"
+	BloodColor "RED"
+	Obituary "$OB_BABY"
+	STATES
+	{
+		SPAWN:
+			 BSPI AB 10 A_LOOK
+			 LOOP
+		SEE: 
+			  BSPI A 20 
+              BSPI A 3 A_BABYMETAL
+              BSPI ABBCC 3 A_CHASE
+              BSPI D 3 A_BABYMETAL
+              BSPI DEEFF 3 A_CHASE
+              goto see+1 
+		MISSILE: 
+				BSPI A 20 BRIGHT A_FACETARGET
+				TNT1 A 0 BRIGHT A_PLAYSOUND("icd/plasma")
+                BSPI G 5 BRIGHT A_CustomMissile("ICD_arachnotron_plasma",20,4,frandom(0.8,-0.8),frandom(0.3,-0.3))
+                BSPI H 5 BRIGHT 
+                BSPI H 0 BRIGHT A_MONSTERREFIRE(15, "see")
+                GOTO MISSILE+1
+		PAIN: 
+			 BSPI I 3  
+             BSPI I 3 A_PAIN
+             GOTO SEE+1
+		DEATH: 
+			  BSPI J 20 A_SCREAM
+              BSPI K 7 A_NOBLOCKING
+              BSPI L 6 
+              BSPI M 6 
+              BSPI N 6 
+              BSPI O 6 A_Bossdeath
+              BSPI P -1
+			  STOP
+		RAISE: 
+			  BSPI P 5  
+              BSPI O 5  
+              BSPI N 5  
+              BSPI M 5  
+              BSPI L 5  
+              BSPI K 5  
+              BSPI J 5  
+              GOTO SEE+1
+//STATES(GIB) TROO U -1  PLAYSOUND(CRUSH);
+        }
+}
+
+ACTOR ICD_ARACHNOTRON_PLASMA REPLACES ARACHNOTRONPLASMA 
+{
+	PROJECTILE
+	SCALE 0.75
+	HEIGHT 8
+	RADIUS 13
+    DAMAGE (random(5,24))
+	//ATTACKHEIGHT 20
+	SPEED 25
+	//KEEP_FIRING_CHANCE 3.92%;
+	SEESOUND "PLASMA"
+	Renderstyle Translucent
+	Alpha 0.70
+	//ACCURACY_ANGLE 0.8;
+	//ACCURACY_SLOPE 0.3;
+	//X_OFFSET -4;
+
+//DLIGHT.TYPE QUADRATIC;
+//DLIGHT.INTENSITY 200;
+//DLIGHT.COLOUR #00FF00;
+
+STATES
+{
+		SPAWN:
+		     APLS A 3 BRIGHT 
+             APLS B 3 BRIGHT 
+			 loop
+		DEATH:
+              APBX A 0 BRIGHT A_PLAYSOUND ("baby/shotx")
+              APBX A 3 BRIGHT 
+              APBX B 3 BRIGHT 
+              APBX C 3 BRIGHT 
+              APBX D 3 BRIGHT 
+              APBX E 3 BRIGHT 
+              STOP
+	}
+}
+

@@ -122,3 +122,27 @@ ACTOR ICD_DualiesPickup : CustomInventory replaces GreenArmor
 			Stop
 	}
 }
+
+//ICD_BerettaMagazine
+
+ACTOR ICD_BerettaPickup : CustomInventory
+{
+	Radius 20
+	Height 16
+	Scale 0.75
+	Inventory.PickupMessage "$GotBeretta"
+	Inventory.PickupSound "icd/bslide"
+	States
+	{
+		Spawn:
+			HGUN B -1
+			stop
+		Pickup:
+			TNT1 A 0 A_JumpIfInventory("ICD_Beretta", 1, "Pickup.Ammo")
+			TNT1 A 0 A_GiveInventory("ICD_Beretta", 1)
+			TNT1 A 0 A_GiveInventory("ICD_BerettaMagazine", 15)
+		Pickup.Ammo:
+			TNT1 A 0 A_GiveInventory("ICD_Bullets", 30)
+			Stop
+	}
+}

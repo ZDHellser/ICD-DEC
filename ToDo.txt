@@ -1,0 +1,71 @@
+To Do list:
+- Weapons
+	- Class 1
+		- Knife											[Done]
+	- Class 2
+		- .45 Pistol									[Done]
+		- .45 Pistolx2 (Green Armor)					[Done]
+	- Class 3
+		- Combat Shotgun								[Half done, add alt-fire]
+		- Flak Shotgun									[Half done, add alt-fire]
+		- Double Barrel									[Done]
+	- Class 4
+		- Uzi SMG (Chaingun)							[Done]
+		- Uzi SMG x2 (God Mode Sphere)					[Done, add pickup]
+	- Class 5
+		- Hand Grenades (Box of Rockets)				[Done, add pickup]
+		- 40mm Grenade Launcher (Cell Pack)				[Needs rework]
+	- Class 6
+		- M16A1 Assault Rifle (Rocket Launcher)			[Done]
+		- M-211 Infantry Rifle (Plasma Gun)				[Done]
+	- Class 7
+		- Minigun (Chaingunner Drop)					[Done]
+		- Sawed Off Shotgun								[Done]
+		- .357 Magnum (Space Marine Corpses)			[Done, add Reload Casings]
+		- 9mm Beretta									[Done]
+	- Class 8
+		- Sentry Turret (Backpack Pickup)				[To Do]
+		- Chainsaw										[Done] (Thanks to Snarboo and WildWeasel)
+	- Class 9
+		- Satchel Charges (Rocket)						[Done]
+		- Sentry Bot Remote								[To Do]
+	- Class 0
+		- Silenced .45 Pistol							[Done]
+		- Flares										[Done]
+- Monsters
+	- Zombieman											[Done]
+		- Variant	(Chaingunner Spawn)					[To Do]
+	- Shotgun Guy										[Done]
+		- Variant	(Chaingunner Spawn)					[To Do]
+	- Imp												[Done]
+	- Demon												[Done]
+	- Spectre											[Done]
+	- WolfSS											[To Do]
+	- Cacodemon											[Done]
+	- Chaingunner										[To Do]
+	- Hell Knight										[Done]
+	- Baron Of Hell										[Done]
+	- Archvile											[To Do]
+	- Pain Elemental									[To Do]
+	- Arachnotron										[To Do] (Thanks to Crudux Cruo)
+	- Spider Mastermind									[To Do]
+	- Cyberdemon										[To Do]
+- Friendlies
+	- Marine Helpers (Megasphere)						[To Do]
+- Items
+	- Ammo
+		- Clip											[Done]
+		- Shotgun Shells								[Done]
+		- Box of Ammo									[Done]
+		- Box of Shells									[Done]
+		- Rocket Box									[Done]
+		- Single Rocket									[Done]
+	- Health
+		- Medikit										[Done]
+		- Stimpack										[Done]
+		- Soulsphere									[Done]
+		- Health Bonus									[Done]
+	- Armour
+		- Green Armour									[Done]
+		- Blue Armour									[Done]
+		- Armour Bonus									[Done]

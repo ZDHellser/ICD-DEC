@@ -55,7 +55,7 @@ ACTOR ICD_Knife : BaseWeapon
 			THRW J 2
 			TNT1 A 5
 			THRW J 1
-			THRW K 1 A_FireProjectile("ICD_ThrownKnife",frandom(-2,2),1,4,0,0,5)
+			THRW K 1 A_FireProjectile("ICD_ThrownKnife",frandom(-2,2),1,4,0,0,-5)
 			THRW BCD 1
 			TNT1 A 16
 			THRW L 2

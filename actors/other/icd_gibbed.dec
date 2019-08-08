@@ -86,8 +86,8 @@ ACTOR ICD_Dead_Former_Human replaces DeadZombieMan
 	States
 	{
 		Spawn:
-			TNT1 A 0 NoDelay A_Jump(250,3)
-			TNT1 A 0 A_DropItem("ICD_Beretta")
+			TNT1 A 0 NoDelay A_Jump(245,3)
+			TNT1 A 0 A_DropItem("ICD_BerettaPickup")
 			TNT1 A 0 A_DropItem("ICD_9mmClip")
 			TNT1 A 0 A_Jump(77,"Spawn.Dead2")
 			Goto Spawn.Dead1
@@ -101,6 +101,41 @@ ACTOR ICD_Dead_Former_Human replaces DeadZombieMan
 			POSS L -1 A_SpawnItem("ICD_Flies")
 			Stop
 	}
+}
+
+ACTOR ICD_Dead_Imp replaces DeadDoomImp
+{
+	Scale 1.1
+	States
+	{
+		Spawn:
+			TROO M -1
+			Stop
+		}
+}
+
+
+ACTOR ICD_Dead_Demon replaces DeadDemon
+{
+	Scale 1.1
+	States
+	{
+		Spawn:
+			SARG N -1
+			Stop
+		}
+}
+
+
+ACTOR ICD_Dead_Cacodemon replaces DeadCacodemon
+{
+	Scale 1.1
+	States
+	{
+		Spawn:
+			HEAD L -1
+			Stop
+		}
 }
 
 
@@ -343,9 +378,10 @@ ACTOR ICD_Hanging_Dead_Bloke_I replaces Meat2
 			Stop
 		Death:
 			TNT1 A 0 A_ChangeFlag("NOGRAVITY", 1)
-			TNT1 A 0 A_ChangeFlag("SHOOTABLE", 1)
+			TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
 			TNT1 A 0 A_ChangeFlag("NOBLOOD", 1)
 			TNT1 A 0 A_ChangeFlag("NODAMAGE", 1)
+			TNT1 A 0 A_ChangeFlag("SOLID", 0)
 			GOR2 A 1
 			TNT1 A 0 A_SpawnItemEx("ICD_Gore")
 			GOR2 B -1
@@ -371,9 +407,10 @@ ACTOR ICD_Hanging_Dead_Bloke_II replaces Meat3
 			Stop
 		Death:
 			TNT1 A 0 A_ChangeFlag("NOGRAVITY", 1)
-			TNT1 A 0 A_ChangeFlag("SHOOTABLE", 1)
+			TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
 			TNT1 A 0 A_ChangeFlag("NOBLOOD", 1)
 			TNT1 A 0 A_ChangeFlag("NODAMAGE", 1)
+			TNT1 A 0 A_ChangeFlag("SOLID", 0)
 			GOR3 A 1
 			TNT1 A 0 A_SpawnItemEx("ICD_Gore")
 			GOR3 B -1
@@ -399,9 +436,10 @@ ACTOR ICD_Hanging_Dead_Bloke_III replaces Meat4
 			Stop
 		Death:
 			TNT1 A 0 A_ChangeFlag("NOGRAVITY", 1)
-			TNT1 A 0 A_ChangeFlag("SHOOTABLE", 1)
+			TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
 			TNT1 A 0 A_ChangeFlag("NOBLOOD", 1)
 			TNT1 A 0 A_ChangeFlag("NODAMAGE", 1)
+			TNT1 A 0 A_ChangeFlag("SOLID", 0)
 			GOR4 A 1
 			TNT1 A 0 A_SpawnItemEx("ICD_Gore")
 			GOR4 B -1
@@ -427,9 +465,10 @@ ACTOR ICD_Hanging_Dead_Bloke_IV replaces Meat5
 			Stop
 		Death:
 			TNT1 A 0 A_ChangeFlag("NOGRAVITY", 1)
-			TNT1 A 0 A_ChangeFlag("SHOOTABLE", 1)
+			TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
 			TNT1 A 0 A_ChangeFlag("NOBLOOD", 1)
 			TNT1 A 0 A_ChangeFlag("NODAMAGE", 1)
+			TNT1 A 0 A_ChangeFlag("SOLID", 0)
 			GOR5 A 1
 			TNT1 A 0 A_SpawnItemEx("ICD_Gore")
 			GOR5 B -1

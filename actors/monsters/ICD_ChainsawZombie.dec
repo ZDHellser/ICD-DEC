@@ -1,0 +1,89 @@
+// Chainsaw zombie implemented by wildweasel
+
+ACTOR ICD_ChainsawZombie
+{
+	Health 100
+	Radius 20
+	Height 56
+	Speed 14
+	Mass 100
+	PainChance 200
+	MONSTER
+	+Floorclip
+	SeeSound "icd/sawful2" // STARTCOMBAT_SOUND=SAWFUL2;
+	PainSound "grunt/pain"
+	DeathSound "grunt/death"
+	ActiveSound "grunt/active"
+	DropItem "ICD_ChainsawPickup"
+	// Obituary "$OB_ZOMBIE" // "%o was killed by a zombieman."
+	// CLOSE_ATTACK=PLAYER_SAW;
+	// SPARE_ATTACK=CHAINSAW_SMOKE;
+	States
+	{
+	Spawn:
+		PLA8 A 5 A_Look
+		Loop
+	See:
+		PLA8 E 16 A_PlaySound("icd/sawidle2") //PLAYSOUND(sawidle2),
+		PLA8 F 12 A_PlaySound("icd/sawidle2") //PLAYSOUND(sawidle2),
+		PLA8 E 20 A_PlaySound("icd/sawup2") //PLAYSOUND(SAWUP2),
+		PLA8 A 0 A_PlaySound("icd/sawidle2") //PLAYSOUND(sawidle2),
+		PLA8 A 0 A_CustomMissile("ICD_ChainsawSmokeSpawner") //SPARE_ATTACK,
+		PLA8 A 4 A_Chase
+		PLA8 A 3 A_Chase
+		PLA8 B 0 A_PlaySound("icd/sawidle2") //PLAYSOUND(sawidle2),
+		PLA8 B 0 A_CustomMissile("ICD_ChainsawSmokeSpawner") //SPARE_ATTACK,
+		PLA8 B 4 A_Chase
+		PLA8 B 3 A_Chase
+		PLA8 C 0 A_PlaySound("icd/sawidle2") //PLAYSOUND(sawidle2),
+		PLA8 C 0 A_CustomMissile("ICD_ChainsawSmokeSpawner") //SPARE_ATTACK,
+		PLA8 C 4 A_Chase
+		PLA8 C 3 A_Chase
+		PLA8 D 0 A_PlaySound("icd/sawidle2") //PLAYSOUND(sawidle2),
+		PLA8 D 0 A_CustomMissile("ICD_ChainsawSmokeSpawner") //SPARE_ATTACK,
+		PLA8 D 4 A_Chase
+		PLA8 D 3 A_Chase
+		Goto See+3 //#CHASE:4;
+	Melee:
+		PLA8 E 0 A_FaceTarget //FACETARGET,
+		PLA8 E 0 ThrustThing(angle*256/360, 2, 0, 0) //MOVE_FWD(2), // Not sure what I should do here, ThrustThing? -ww
+		PLA8 E 3 A_CustomMeleeAttack(5, "icd/sawful2", "weapons/chainsaw/sawful2") //CLOSE_ATTACK,
+		PLA8 F 2 A_CustomMissile("ICD_ChainsawSmokeSpawner") //SPARE_ATTACK(CHAINSAW_SMOKE2),
+		PLA8 F 3 A_CustomMeleeAttack(5, "icd/sawful2", "weapons/chainsaw/sawful2") //CLOSE_ATTACK,
+		PLA8 F 2 A_CustomMissile("ICD_ChainsawSmokeSpawner") //SPARE_ATTACK(CHAINSAW_SMOKE2),
+		Goto See+3 //#CHASE:4;
+	Pain:
+		PLA8 G 3
+		PLA8 G 3 A_Pain
+		Goto See+3 //#CHASE:4;
+	Death:
+		PLA8 H 6 A_Scream
+		PLA8 I 6 
+		PLA8 J 6 A_NoBlocking
+		PLA8 K 6 //DROPITEM(CHAINSAW),
+		PLA4 LM 10
+		PLA4 N 0 A_Jump(38,2) //JUMP(DEATH:9,15%),
+		PLA4 N -1
+		Stop
+		PLA4 N 500 
+		PLA4 N 3 A_SpawnItemEx("ICD_Flies") //DROPITEM(FLIES),
+		PLA4 N -1 A_SpawnItemEx("ICD_Flies") //DROPITEM(FLIES);
+		Stop
+	XDeath:
+		PLA8 L 8
+		PLA8 M 5 A_XScream
+		PLA8 NRST 5
+		PLA4 U 5 A_NoBlocking
+		PLA4 V 5
+		PLA4 W 0 A_Jump(38,2) //JUMP(OVERKILL:11,20%),
+		PLA4 W -1
+		Stop
+		PLA4 W 400
+		PLA4 W 3 A_SpawnItemEx("ICD_Flies") //DROPITEM(FLIES),
+		PLA4 W -1 A_SpawnItemEx("ICD_Flies") //DROPITEM(FLIES);
+		Stop
+	Raise:
+		PLA8 KJIH 5
+		Goto Spawn
+	}
+}
