@@ -61,6 +61,13 @@ ACTOR ICD_QPUFF : ICD_GS_EmptyCasingSmoke
 	scale 0.7
 }
 
+ACTOR ICD_TURRET_SMOKE : ICD_GunSmokeBase
+{
+	Scale 0.15
+	Speed 2
+	Alpha 0.11
+}
+
 ACTOR ICD_PUFF : BulletPuff
 {
 	VSpeed 0.5

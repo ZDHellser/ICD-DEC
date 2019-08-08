@@ -1,0 +1,197 @@
+ACTOR ICD_TURRET
+{
+	Health 75
+	Radius 16
+	Height 40
+	Speed 0
+	Mass 2000
+	MinMissileChance 255
+	PainSound "icd/turr3"
+	DeathSound "icd/turr2"
+	ActiveSound "icd/turr1"
+	scale 0.7
+	Monster
+	+NOBLOOD
+	+FRIENDLY
+	+LOOKALLAROUND
+	+DONTTHRUST 
+	States
+	{
+		Spawn:
+			TURR A 1 A_Look
+			Loop
+		See:
+			TNT1 A 0 A_JumpIfInventory("ICD_Turret_Shutdown", 1, "Undeploy", AAPTR_MASTER)
+			TURR A 1 A_Chase
+			Loop
+		Missile:
+			TNT1 A 0 A_JumpIfCloser(radius+90, "Missile.ShortRange")
+		Missile.LongRange:
+			TNT1 A 0 A_JumpIfInventory("ICD_Turret_Shutdown", 1, "Undeploy", AAPTR_MASTER)
+			TNT1 A 0 A_FaceTarget
+			TNT1 A 0 A_Jump(178, 5)
+			TNT1 A 0 A_SpawnProjectile("ICD_TURRET_TRACER", 32,2,frandom(-1,1),CMF_OFFSETPITCH,frandom(-1,1))
+			TNT1 A 0 A_PlaySound("icd/mini4")
+			TURR B 2 Bright A_CustomBulletAttack(1, 1, 1, random(3,9),"ICD_PUFF",1024,CBAF_NORANDOM)
+			TURR B 2 Bright A_SpawnProjectile("ICD_Turret_SMOKE", 32,2,frandom(-5,5),CMF_OFFSETPITCH,frandom(-5,5))
+			TURR B 1 Bright //Casing
+			TNT1 A 0 A_JumpIfCloser(radius+90, "See")
+			TNT1 A 0 A_Jump(178, "Missile.Alternative")
+		Missile.Alternative:
+			TNT1 A 0 A_JumpIfInventory("ICD_Turret_Shutdown", 1, "Undeploy", AAPTR_MASTER)
+			TNT1 A 0 A_PlaySound("icd/mini4")
+			TNT1 A 0 A_SpawnProjectile("ICD_TURRET_TRACER", 32,-2,frandom(-1,1),CMF_OFFSETPITCH,frandom(-1,1))
+			TURR C 2 Bright A_CustomBulletAttack(1, 1, 1, random(3,9),"ICD_PUFF",1024,CBAF_NORANDOM)
+			TURR C 2 Bright A_SpawnProjectile("ICD_Turret_SMOKE", 32,-2,frandom(-5,5),CMF_OFFSETPITCH,frandom(-5,5))
+			TURR C 1 Bright // Casing
+			TNT1 A 0 A_JumpIfCloser(radius+90, "See")
+			TNT1 A 0 A_MonsterRefire(10, "See")
+			Goto "Missile.LongRange"+3
+		Missile.ShortRange:
+			TNT1 A 0 A_JumpIfInventory("ICD_Turret_Shutdown", 1, "Undeploy", AAPTR_MASTER)
+			TNT1 A 0 A_FaceTarget
+			TNT1 A 0 A_SpawnProjectile("ICD_Turret_SMOKE", 32,2,frandom(-5,5),CMF_OFFSETPITCH,frandom(-5,5))
+			TURR B 1 Bright A_SpawnProjectile("ICD_Gun3_Sparks", 32,2,frandom(-5,5),CMF_OFFSETPITCH,frandom(-5,5))
+			TURR B 1 Bright A_SpawnProjectile("ICD_Turret_SMOKE", 32,2,frandom(-5,5),CMF_OFFSETPITCH,frandom(-5,5))
+			TNT1 A 0 A_PlaySound("icd/sawed3")
+			TURR B 2 Bright A_CustomBulletAttack(7, 7, 5, random(4,16),"ICD_SPUFF",250,CBAF_NORANDOM)
+			TURR B 1 Bright // Shell
+			TNT1 A 0 A_SpawnProjectile("ICD_Turret_SMOKE", 32,-2,frandom(-5,5),CMF_OFFSETPITCH,frandom(-5,5))
+			TURR C 1 Bright A_SpawnProjectile("ICD_Gun3_Sparks", 32,-2,frandom(-5,5),CMF_OFFSETPITCH,frandom(-5,5))
+			TURR C 1 Bright A_SpawnProjectile("ICD_Turret_SMOKE", 32,-2,frandom(-5,5),CMF_OFFSETPITCH,frandom(-5,5))
+			TNT1 A 0 A_PlaySound("icd/sawed3")
+			TURR C 2 Bright A_CustomBulletAttack(1, 1, 1, random(3,9),"ICD_PUFF",250,CBAF_NORANDOM)
+			TURR C 1 Bright // Shell
+			Goto See
+		Pain:
+			TURR A 4
+			TURR A 4 A_Pain
+			Goto See
+		Death:
+			TURR A 4
+			TURR A 4 // Death Sound
+			TURR A 4
+			TURR E 4 // Make Dead
+			TURR E 4
+			TURR D 3 // Dead Turret Drop
+			TURR D 0
+			Stop
+		Undeploy:
+			TURR E 4 // Nothing
+			TURR E 4 // Make dead
+			TURR D 1 A_PlaySound("icd/satch1")
+			TURR D 3 // Tag? Why?
+			TURR D 0 // Drop Item New Turret
+			Stop
+	}
+}
+
+ACTOR ICD_Turret_Shutdown: CustomInventory
+{
+	Inventory.MaxAmount 1
+	+INVENTORY.IGNORESKILL
+	States
+	{
+		Use:
+			TNT1 A 1
+			TNT1 A 1 A_TakeInventory("ICD_Turret_Shutdown", 1)
+			TNT1 A 0 A_Print("I SHOULD BE DELETED")
+			FAIL
+	}
+}
+
+Actor ICD_Turret_Thrown
+{
+	Radius 8
+	Height 8
+	Speed 5
+	BounceType "Doom"
+	Scale 0.7
+	PROJECTILE
+	SeeSound "icd/throw"
+	+USEBOUNCESTATE
+	+BOUNCEONACTORS
+	+SHOOTABLE
+	+DONTCORPSE
+	-NOGRAVITY
+	BounceType Doom
+	BounceFactor 0.5
+	States
+	{
+		Spawn:
+			TURR D 2
+			Loop
+		Bounce:
+			TNT1 A 0 A_PlaySound("icd/satch1")
+			TURR D 2
+			Goto Spawn
+		Death:
+			TURR E 1
+			TNT1 A 0 
+			TNT1 A 0 A_SpawnItemEx("ICD_Turret", 0, 0, 0, 0, 0, 0, 0, SXF_SETMASTER)
+			Stop
+	}
+}
+
+Actor ICD_Turret_Shooter : BaseWeapon
+{
+	Game Doom
+	Weapon.AmmoUse 1
+	Weapon.AmmoGive 0
+	Weapon.AmmoType "ICD_Bullets"
+	Inventory.PickupMessage "$GotChainGun"
+	Tag "$TAG_Turret"
+	Weapon.UpSound "icd/gren3"
+	+WEAPON.AMMO_OPTIONAL
+	+WEAPON.NOALERT
+	States
+	{
+		Select:
+			TGUN A 1 A_Raise
+			Loop
+		Deselect:
+			TGUN A 1 A_Lower
+			Loop
+		Ready:
+			TGUN A 1 A_WeaponReady
+			Loop
+		Fire:
+			TGUN B 10 A_PlaySound("icd/weapup")
+			TGUN A 10 A_FireProjectile("ICD_Turret_Thrown", 0, 1, -4, 0, 0, -8)
+			TGUN B 10
+			TGUN A 5 A_ReFire
+			Goto Ready
+	}
+}
+
+Actor ICD_Turret_Detonator : BaseWeapon
+{
+	Game Doom
+	Weapon.AmmoUse 1
+	Weapon.AmmoGive 0
+	Weapon.AmmoType "ICD_Bullets"
+	Inventory.PickupMessage "$GotChainGun"
+	Tag "$TAG_Turret"
+	Weapon.UpSound "icd/gren3"
+	+WEAPON.AMMO_OPTIONAL
+	+WEAPON.NOALERT
+	States
+	{
+		Select:
+			CHRG D 1 A_Raise
+			Loop
+		Deselect:
+			CHRG D 1 A_Lower
+			Loop
+		Ready:
+			CHRG D 1 A_WeaponReady
+			Loop
+		Fire:
+			CHRG E 4 A_PlaySound("icd/click")
+			CHRG E 1 A_PlaySound("icd/turr1")
+			CHRG F 20 A_GiveInventory("ICD_Turret_Shutdown", 1)
+			CHRG F 5 A_ReFire
+			Goto Ready
+	}
+}
+

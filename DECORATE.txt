@@ -46,6 +46,10 @@
 #include "actors/weapons/icd_beretta.dec"
 #include "actors/weapons/icd_revolver.dec"
 
+//Slot #8 (Tools Class)
+#include "actors/weapons/icd_turret.dec"
+
+
 //Slot #9 (Stuff?)
 #include "actors/weapons/icd_satchel.dec"
 

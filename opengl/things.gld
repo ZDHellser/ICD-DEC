@@ -31,6 +31,14 @@ pointlight ICD_EvilEye
 	attenuate 1
 }
 
+pointlight ICD_Skullrock
+{
+	color 1.0 1.0 0.25
+	size 50
+	offset 0 28 0
+	attenuate 1
+}
+
 flickerlight2 ICD_BigRedTorch
 {
     color 1.0 0.0 0.0

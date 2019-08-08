@@ -43,6 +43,7 @@ icd/item2									DSITEM2
 //Sawed Off
 icd/sawed1									DSSAWED1
 icd/sawed2									DSSAWED2
+icd/sawed3									DSSAWED3
 
 //Double Barrel
 //These sounds are not defined in ICD
@@ -125,6 +126,11 @@ icd/magnm									DSMAGNM
 icd/mout									DSMOUT
 icd/mload									DSMLOAD
 icd/min										DSMIN
+
+//Turret
+icd/turr1									DSTURR1
+icd/turr2									DSTURR2
+icd/turr3									DSTURR3
 
 $random weapons/boom?	{ icd/boom1 icd/boom2 icd/boom3 icd/boom4 }
 icd/boom1								DSBOOM1

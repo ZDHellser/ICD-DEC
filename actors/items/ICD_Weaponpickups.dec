@@ -146,3 +146,26 @@ ACTOR ICD_BerettaPickup : CustomInventory
 			Stop
 	}
 }
+
+ACTOR ICD_DoubleBarrelPickup : CustomInventory replaces SuperShotgun
+{
+	Radius 20
+	Height 16
+	Scale 0.77
+	Inventory.PickupMessage "$GotDoubleBarrel"
+	Inventory.PickupSound "weapons/sshotc"
+	States
+	{
+		Spawn:
+			SGN2 B -1
+			Stop
+		Pickup:
+			TNT1 A 0 A_JumpIfInventory("ICD_DoubleBarrel", 1, "Pickup.Ammo")
+			TNT1 A 0 A_GiveInventory("ICD_DoubleBarrel", 1)
+			TNT1 A 0 A_GiveInventory("ICD_SSGAmmo", 2)
+		Pickup.Ammo:
+			TNT1 A 0 A_GiveInventory("ICD_Shells", 2)
+			Stop
+	}
+}
+			

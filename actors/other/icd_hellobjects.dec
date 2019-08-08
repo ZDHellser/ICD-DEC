@@ -219,7 +219,7 @@ ACTOR ICD_Floating_SkullRock : ICD_ObjectTemplate replaces FloatingSkull
 	{
 		Spawn:
 			TNT1 A 0 A_PlaySound("icd/fire5")
-			FSKU ABC 8
+			FSKU ABC 8 Light ("ICD_Skullrock") Bright
 			Loop
 	}
 }
