@@ -90,13 +90,15 @@ ACTOR ICD_Turret_Shutdown: CustomInventory
 {
 	Inventory.MaxAmount 1
 	+INVENTORY.IGNORESKILL
+	+INVENTORY.AUTOACTIVATE 
 	States
 	{
-		Use:
+		Pickup:
 			TNT1 A 1
+		Use:
+			TNT1 A 10
 			TNT1 A 1 A_TakeInventory("ICD_Turret_Shutdown", 1)
-			TNT1 A 0 A_Print("I SHOULD BE DELETED")
-			FAIL
+			Stop
 	}
 }
 
